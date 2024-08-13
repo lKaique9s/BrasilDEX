@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    background: linear-gradient(to right, #d4d3dd, #efefbb);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    letter-spacing: 5px;
+}
+
+.aniContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.animal-peixe{
+    background-color: #889cc6;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+}
+
+.animal-reptil{
+    background-color: #a7d4a7;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+}
+
+.animal-ave{
+    background-color: #bbd1d2;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px; 
+}
+
+.animal-mami{
+    background-color: #d5c5b0;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px; 
+}
+
+.animal-anfi{
+    background-color:   #cad8b9;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px; 
+}
+
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 100px #FFFFFF;
+
+}
+
+.imgContainer img{
+        max-width: 90%;
+}
+
+.info{
+    margin-top: 20px;
+}
+
+.number{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2.5px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.name{
+    margin: 15px 0 7px;
+    letter-spacing: 1.5px;
+}
+
+.type-mami{
+    background: linear-gradient(to bottom, #FFA726 ,  #6D4C41 );
+    padding: 2.5px 3px;
+    border-radius: 3px;
+}
+
+.type-anfi{
+    background: linear-gradient(to bottom,  #E57373 , #81C784 );
+    padding: 2.5px 3px;
+    border-radius: 3px;
+}
+
+.type-peixe{
+    background: linear-gradient(to bottom, #2196F3  , #0D47A1);
+    padding: 2.5px 3px;
+    border-radius: 3px;
+}
+
+.type-ave{
+    background: linear-gradient(to bottom, #87CEEB  , #B0BEC5);
+    padding: 2.5px 3px;
+    border-radius: 3px;
+}
+
+.type-reptil{
+    background: linear-gradient(to bottom, #4CAF50  , #1B5E20);
+    padding: 2.5px 3px;
+    border-radius: 3px;
+}
+
+.nodecoration{
+    text-decoration: none;
+    color: black;
+}
