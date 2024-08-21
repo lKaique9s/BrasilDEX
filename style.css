@@ -32,72 +32,60 @@ h1{
     max-width: 1200px;
 }
 
-.animal-peixe{
-    background-color: #889cc6;
+.animal-peixe,.animal-anfi,.animal-ave,.animal-reptil,.animal-mami{
     border-radius: 20px;
     box-shadow: 0 3px 15px rgba(100,100,100,0.5);
     margin: 10px;
     padding: 20px;
     text-align: center;
     width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.4s ease, height 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    transform-origin: center;  
+    align-items: center; 
+    justify-content: center;
+}
+
+.animal-peixe{
+    background-color: #889cc6;  
+}
+
+.animal-peixe:hover{
+    background-color: #6e88c5;  
 }
 
 .animal-reptil{
     background-color: #a7d4a7;
-    border-radius: 20px;
-    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animal-reptil:hover{
+    background-color: #81d181;
 }
 
 .animal-ave{
     background-color: #bbd1d2;
-    border-radius: 20px;
-    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.animal-ave:hover{
+    background-color: #a6d1d3;
 }
 
 .animal-mami{
     background-color: #d5c5b0;
-    border-radius: 20px;
-    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.animal-mami:hover{
+    background-color: #d3b288;
 }
 
 .animal-anfi{
-    background-color:   #cad8b9;
-    border-radius: 20px;
-    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    background-color: #cad8b9;
 }
 
-
-.imgContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 100px #FFFFFF;
-
-}
-
-.imgContainer img{
-        max-width: 90%;
+.animal-anfi:hover{
+    background-color: #b2d488;
 }
 
 .info{
@@ -118,31 +106,27 @@ h1{
 
 .type-mami{
     background: linear-gradient(to bottom, #FFA726 ,  #6D4C41 );
-    padding: 2.5px 3px;
-    border-radius: 3px;
 }
 
 .type-anfi{
     background: linear-gradient(to bottom,  #E57373 , #81C784 );
-    padding: 2.5px 3px;
-    border-radius: 3px;
 }
 
 .type-peixe{
-    background: linear-gradient(to bottom, #2196F3  , #0D47A1);
-    padding: 2.5px 3px;
-    border-radius: 3px;
+    background: linear-gradient(to bottom, #2196F3  , #0D47A1);   
 }
 
 .type-ave{
     background: linear-gradient(to bottom, #87CEEB  , #B0BEC5);
-    padding: 2.5px 3px;
-    border-radius: 3px;
 }
 
 .type-reptil{
     background: linear-gradient(to bottom, #4CAF50  , #1B5E20);
-    padding: 2.5px 3px;
+}
+
+.type-anfi,.type-ave,.type-mami,.type-peixe,.type-reptil{
+    color: #fff;
+    padding: 2.5px 6px;
     border-radius: 3px;
 }
 
@@ -173,7 +157,7 @@ h1{
 .nav-links {
     list-style-type: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links li a {
@@ -186,8 +170,10 @@ h1{
 }
 
 .nav-links li a:hover {
-    background-color: #9f901e;
-    border-radius: 4px;
+    background-color: #fff;
+    border-color: #FF9800;
+    color: #FF9800;
+    border-radius: 6px;
 }
 
 .content {
@@ -230,10 +216,6 @@ h1{
     transition: background-color 0.3s ease;
 }
 
-.intro .cta-button:hover {
-    background-color: #F57C00; 
-}
-
 .cta-button {
     display: inline-block;
     background-color: #FF9800;
@@ -242,11 +224,15 @@ h1{
     padding: 10px 20px;
     border-radius: 4px;
     font-size: 18px;
+    border: 2px solid transparent;
 }
 
-.cta-button:hover {
-    background-color: #F57C00; 
+.cta-button:hover{
+    background-color: #fff; 
+    color: #FF9800;
+    border: 2px solid #FF9800 ;
 }
+
 
 .highlights {
     padding: 20px;
@@ -268,7 +254,26 @@ h1{
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.4s ease, height 0.4s ease;
+}
+
+.animal-peixe img,
+.animal-anfi img,
+.animal-ave img,
+.animal-reptil img,
+.animal-mami img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.5s ease;
+    transform-origin: center; 
+}
+
+.animal-peixe:hover img,
+.animal-mami:hover img,
+.animal-anfi:hover img,
+.animal-reptil:hover img,
+.animal-ave:hover img {
+    transform: scale(1.2    );
 }
 
 .animal-card:hover ,
@@ -277,8 +282,10 @@ h1{
 .animal-anfi:hover,
 .animal-reptil:hover,
 .animal-ave:hover{
-    transform: translateY(-10px);
+    transform: translateY(-10px), scale(1.2);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    width: 275px;
+    height: 270px;
 }
 
 
@@ -297,16 +304,9 @@ h1{
     margin-bottom: 10px;
 }
 
-.animal-card .cta-button {
-    background-color: #FF9800; 
-    font-size: 16px;
-    padding: 8px 15px;
-}
-
 .conscientizacao {
+    font-family: monospace;
     padding: 40px 20px;
-    background: url('caminho-para-imagem-de-fundo.jpg') no-repeat center center; 
-    background-size: cover;
     color: #fff; 
     text-align: center;
     position: relative;
