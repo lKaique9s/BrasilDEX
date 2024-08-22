@@ -277,7 +277,10 @@ h1{
     transform: scale(1.2    );
 }
 
-.animal-card:hover ,
+.animal-card:hover {
+    transform: scale(1.2);
+}
+
 .animal-peixe:hover,
 .animal-mami:hover,
 .animal-anfi:hover,
