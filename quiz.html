@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Animais</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #FF9800;
+            text-shadow: 2px 2px #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Quiz de Animais</h1>
+    <div class="quiz-container">
+        <div class="question" id="question"></div>
+        <div class="option" id="option1"></div>
+        <div class="option" id="option2"></div>
+        <div class="option" id="option3"></div>
+        <div class="option" id="option4"></div>
+
+        <div class="hidden" id="correct-answer">
+            <p>Você acertou!</p>
+            <button class="next-button" onclick="nextQuestion()">Próxima pergunta</button>
+        </div>
+        
+        <div class="hidden" id="wrong-answer">
+            <p>Você errou!</p>
+            <button class="next-button" onclick="nextQuestion()">Próxima pergunta</button>
+        </div>
+
+        <div class="hidden" id="final-result">
+            <p class="final-message" id="final-message"></p>
+            <button class="back-button" onclick="window.location.href='saibamais.html'">Voltar</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Qual é o lugar onde muitos animais encontram abrigo e segurança?",
+                options: ["A) Uma Comida", "B) Um Habitat", "C) Um Brinquedo", "D) Na Cidade"],
+                answer: "B) Um Habitat"
+            },
+            {
+                question: "Por que é importante que existam muitos tipos diferentes de animais e plantas no mundo?",
+                options: ["A) Para fazer barulho", "B) Para que possamos ter mais pets", "C) Para ter biodiversidade", "D) Para não haver competição"],
+                answer: "C) Para ter biodiversidade"
+            },
+            {
+                question: "O que você acha que significa a palavra extinção quando falamos sobre animais?",
+                options: ["A) Quando eles podem desaparecer para sempre.", "B) Quando eles tiram férias.", "C) Quando eles vão para a escola.", "D) Quando eles se mudam para outro lugar."],
+                answer: "A) Quando eles podem desaparecer para sempre."
+            },
+            {
+                question: "Se você estivesse explorando uma floresta, que tipo de animal você esperaria encontrar que é conhecido por ter penas e pode voar?",
+                options: ["A) Anfíbios", "B) Aves", "C) Répteis", "D) Mamíferos"],
+                answer: "B) Aves"
+            },
+            {
+                question: "Quando você pensa em animais que são rápidos e ágeis para pegar suas presas, qual deles vem à mente?",
+                options: ["A) Herbívoros", "B) Onívoros", "C) Predadores", "D) Insetos"],
+                answer: "C) Predadores"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let correctAnswersCount = 0;
+
+        function loadQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            document.getElementById('question').textContent = currentQuestion.question;
+            document.getElementById('option1').textContent = currentQuestion.options[0];
+            document.getElementById('option2').textContent = currentQuestion.options[1];
+            document.getElementById('option3').textContent = currentQuestion.options[2];
+            document.getElementById('option4').textContent = currentQuestion.options[3];
+            document.getElementById('correct-answer').classList.add('hidden');
+            document.getElementById('wrong-answer').classList.add('hidden');
+            document.getElementById('final-result').classList.add('hidden');
+            enableOptions();
+        }
+
+        function checkAnswer(selectedOption) {
+            const currentQuestion = questions[currentQuestionIndex];
+            if (selectedOption.textContent.trim() === currentQuestion.answer) {
+                correctAnswersCount++;
+                document.getElementById('correct-answer').classList.remove('hidden');
+                document.getElementById('wrong-answer').classList.add('hidden');
+            } else {
+                document.getElementById('wrong-answer').classList.remove('hidden');
+                document.getElementById('correct-answer').classList.add('hidden');
+            }
+            disableOptions();
+        }
+
+        function disableOptions() {
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+        }
+
+        function enableOptions() {
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.style.pointerEvents = 'auto');
+        }
+
+        const options = document.querySelectorAll('.option');
+        options.forEach(option => {
+            option.addEventListener('click', () => checkAnswer(option));
+        });
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            let message = "";
+            let rank = "";
+
+            switch (correctAnswersCount) {
+                case 0:
+                    message = "Parece que você precisa estudar mais sobre os animais!";
+                    rank = "Iniciante";
+                    break;
+                case 1:
+                    message = "Você acertou 1 pergunta! Vamos tentar novamente.";
+                    rank = "Iniciante";
+                    break;
+                case 2:
+                    message = "Você acertou 2 perguntas! Um bom começo!";
+                    rank = "Intermediário";
+                    break;
+                case 3:
+                    message = "Você acertou 3 perguntas! Muito bem!";
+                    rank = "Avançado";
+                    break;
+                case 4:
+                    message = "Você acertou 4 perguntas! Quase lá!";
+                    rank = "Especialista";
+                    break;
+                case 5:
+                    message = "Parabéns! Você acertou todas as 5 perguntas!";
+                    rank = "Mestre";
+                    break;
+                default:
+                    message = "Algo deu errado!";
+                    rank = "Desconhecido";
+                    break;
+            }
+
+            document.getElementById('final-message').textContent = `${message} Você é um ${rank}!`;
+            document.getElementById('final-result').classList.remove('hidden');
+            document.getElementById('correct-answer').classList.add('hidden');
+            document.getElementById('wrong-answer').classList.add('hidden');
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>

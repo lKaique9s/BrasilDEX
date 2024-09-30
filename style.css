@@ -349,3 +349,159 @@ h1{
 .conscientizacao p:last-child {
     margin-bottom: 0;
 }
+
+.card-container-expand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.animal-card-expand {
+    display: flex;
+    width: 1000px;
+    background-color: #2196F3   ;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.animal-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.animal-image img {
+    width: 80%; 
+    height: auto; 
+    object-fit: contain; 
+    border: 5px solid #333; 
+    border-radius: 10px; 
+}
+
+.animal-info {
+    width: 50%;
+    padding: 20px;
+}
+
+.animal-info h1 {
+    font-size: 2rem;
+    color: #FF9800;
+    margin-bottom: 10px;
+}
+
+.animal-info p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.animal-info strong {
+    color: #FF9800;
+}
+
+.fun-facts {
+    background-color: #6e88c5;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.fun-facts ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fun-facts li {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #FF9800; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 20px; 
+    display: inline-block; 
+}
+
+.back-button:hover {
+    background-color: #d88303; 
+}
+
+.quiz-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.option {
+    background-color: #FF9800;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #fff;
+    color: #FF9800;
+    border: 2px solid #FF9800;
+}
+
+.hidden {
+    display: none;
+}
+
+.final-message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.back-button {
+    background-color: #FF9800;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #fff;
+    color: #FF9800;
+    border: 2px solid #FF9800;
+}
+
+.next-button {
+    background-color: #FF9800; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.next-button:hover {
+    background-color: #ffa621;
+    transform: scale(1.05);
+}
