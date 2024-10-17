@@ -23,7 +23,7 @@ h1{
     letter-spacing: 5px;
 }
 
-.aniContainer{
+.aniContainer, #anfibiosID{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -32,7 +32,7 @@ h1{
     max-width: 1200px;
 }
 
-.animal-peixe,.animal-anfi,.animal-ave,.animal-reptil,.animal-mami{
+.animal-peixe,.animal-anfibio,.animal-ave,.animal-reptil,.animal-mami{
     border-radius: 20px;
     box-shadow: 0 3px 15px rgba(100,100,100,0.5);
     margin: 10px;
@@ -80,11 +80,11 @@ h1{
     background-color: #d3b288;
 }
 
-.animal-anfi{
+.animal-anfibio{
     background-color: #cad8b9;
 }
 
-.animal-anfi:hover{
+.animal-anfibio:hover{
     background-color: #b2d488;
 }
 
@@ -108,7 +108,7 @@ h1{
     background: linear-gradient(to bottom, #FFA726 ,  #6D4C41 );
 }
 
-.type-anfi{
+.type-anfibio{
     background: linear-gradient(to bottom,  #E57373 , #81C784 );
 }
 
@@ -124,7 +124,7 @@ h1{
     background: linear-gradient(to bottom, #4CAF50  , #1B5E20);
 }
 
-.type-anfi,.type-ave,.type-mami,.type-peixe,.type-reptil{
+.type-anfibio,.type-ave,.type-mami,.type-peixe,.type-reptil{
     color: #fff;
     padding: 2.5px 6px;
     border-radius: 3px;
@@ -258,7 +258,7 @@ h1{
 }
 
 .animal-peixe img,
-.animal-anfi img,
+.animal-anfibio img,
 .animal-ave img,
 .animal-reptil img,
 .animal-mami img {
@@ -270,7 +270,7 @@ h1{
 
 .animal-peixe:hover img,
 .animal-mami:hover img,
-.animal-anfi:hover img,
+.animal-anfibio:hover img,
 .animal-reptil:hover img,
 .animal-ave:hover img {
     transform: scale(1.2    );
@@ -279,7 +279,7 @@ h1{
 .animal-card:hover ,
 .animal-peixe:hover,
 .animal-mami:hover,
-.animal-anfi:hover,
+.animal-anfibio:hover,
 .animal-reptil:hover,
 .animal-ave:hover{
     transform: translateY(-10px), scale(1.2);

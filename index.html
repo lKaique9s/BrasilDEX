@@ -279,6 +279,61 @@
         </div>
         </a>
 
+        <!--anfibios-->
+            <div id="anfibiosID">
+            </div>
+        </div>
     </div>
+            <script>
+                const anfibio = [
+                {numero: 21, nome: "Rã-touro", img: "./imgs/anfibiosimg/rã touro.jfif", link: "./animal-card/anfibios/Ra-touro.html"},
+                {numero: 22, nome: "Sapo-cururu", img: "./imgs/anfibiosimg/sapo cururu.webp", link: "./animal-card/anfibios/Sapo-cururu.html"},
+                {numero: 23, nome: "Salamandra", img: "./imgs/anfibiosimg/salamandra.jpg", link: "./animal-card/anfibios/Salamandra.html"},
+                {numero: 24, nome: "Rã-verde", img: "./imgs/anfibiosimg/ra verde.jpg", link: "./animal-card/anfibios/Ra-verde.html"},
+                {numero: 25, nome: "Rã-de-vidro", img: "./imgs/anfibiosimg/ra vidro.jfif", link: "./animal-card/anfibios/Ra-de-vidro.html"},
+                {numero: 26, nome: "Sapo-de-chifre", img: "./imgs/anfibiosimg/sapo de chifre.jfif", link: "./animal-card/anfibios/Sapo-de-chifre.html"},
+                {numero: 27, nome: "Rã-d'água", img: "./imgs/anfibiosimg/ra dgua.webp", link: "./animal-card/anfibios/Ra-dagua.html"},
+                {numero: 28, nome: "Sapo-de-patas-amarilhas", img: "./imgs/anfibiosimg/sapo de patas amarilhas.jpg", link: "./animal-card/anfibios/Sapo-de-patas-amarilhas.html"},
+                {numero: 29, nome: "Rã-de-flecha", img: "./imgs/anfibiosimg/ra de flechas.webp", link: "./animal-card/anfibios/Ra-de-flecha.html"},
+                {numero: 30, nome: "Rã-manteiga", img: "./imgs/anfibiosimg/ra manteiga.webp", link: "./animal-card/anfibios/Ra-manteiga.html"},
+                {numero: 31, nome: "Sapo-buey", img: "./imgs/anfibiosimg/sapo buey.jpg", link: "./animal-card/anfibios/Sapo-buey.html"},
+                {numero: 32, nome: "Rã-do-mato", img: "./imgs/anfibiosimg/ra do mato.jpg", link: "./animal-card/anfibios/Ra-do-mato.html"},
+                {numero: 33, nome: "Sapo-gigante", img: "./imgs/anfibiosimg/sapo gigante.webp", link: "./animal-card/anfibios/Sapo-gigante.html"},
+                {numero: 34, nome: "Rã-de-olhos-verdes", img: "./imgs/anfibiosimg/ra de olhos verdes.webp", link: "./animal-card/anfibios/Ra-de-olhos-verdes.html"},
+                {numero: 35, nome: "Salamandra-d'água", img: "./imgs/anfibiosimg/salamandra dgua.jfif", link: "./animal-card/anfibios/Salamandra-dagua.html"},
+                {numero: 36, nome: "Rã-pimenta", img: "./imgs/anfibiosimg/ra pimenta.webp", link: "./animal-card/anfibios/Ra-pimenta.html"},
+                {numero: 37, nome: "Salamandra listrada", img: "./imgs/anfibiosimg/salamandra listrada.webp", link: "./animal-card/anfibios/Salamandra-listrada.html"},
+                {numero: 38, nome: "Tritão-de-crista-italiano", img: "./imgs/anfibiosimg/Tritão-de-crista-italiano.webp", link: "./animal-card/anfibios/Tritao-de-crista-italiano.html"},
+                {numero: 39, nome: "Tritão-marmoreado-pigmeu", img: "./imgs/anfibiosimg/Tritão-marmoreado-pigmeu.webp", link: "./animal-card/anfibios/Tritao-marmoreado-pigmeu.html"},
+                {numero: 40, nome: "Salamandra-lanzai", img: "./imgs/anfibiosimg/salamandra preta.jfif", link: "./animal-card/anfibios/Salamandra-lanzai.html"}
+            ];
+
+
+                const container = document.getElementById('anfibiosID');
+
+                function criarAnfibioCard(anfibio){
+                    return`
+                    
+                    <a href="${anfibio.link}" class="nodecoration">
+                    <div class="animal-anfibio">
+                        <div class="imgContainer">
+                            <img src="${anfibio.img}" width="150" height="100" alt="${anfibio.nome}">
+                        </div>
+                        <div class="info">
+                            <span class="number">#${anfibio.numero}</span>
+                            <h3 class="name">${anfibio.nome}</h3>
+                            <small class="type-anfibio"><span>Anfibios</span></small>    
+                        </div>
+                    </div>
+                    </a>
+                `
+                }
+
+                anfibio.forEach(anfibio => {
+                    container.innerHTML += criarAnfibioCard(anfibio);
+                });
+            </script>
+
+    
 </body>
 </html>
