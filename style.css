@@ -23,7 +23,7 @@ h1{
     letter-spacing: 5px;
 }
 
-.aniContainer, #anfibiosID{
+.aniContainer, #anfibiosID, #peixesID{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -46,6 +46,7 @@ h1{
     transform-origin: center;  
     align-items: center; 
     justify-content: center;
+    height: 270px;
 }
 
 .animal-peixe{

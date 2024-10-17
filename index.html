@@ -19,268 +19,61 @@
     </nav>
     <div class="aniContainer" id="aniContainer" style="margin-top: 30px;">
 
-        <a href="animal-card/Apapa.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/apapa.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#1</span>
-                <h3 class="name">Apapá</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
+                <!-- Peixes -->
+        <div id="peixesID">
         </div>
-        </a>
 
-        <a href="animal-card/arraia.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/ArraiaAguaDoce.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#2</span>
-                <h3 class="name">Arraia de água doce</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
+        <script>
+            const peixe = [
+                {numero: 1, nome: "Apapá", img: "./imgs/peixeimg/apapa.jpg", link: "animal-card/Apapa.html"},
+                {numero: 2, nome: "Arraia de água doce", img: "./imgs/peixeimg/ArraiaAguaDoce.jpg", link: "animal-card/arraia.html"},
+                {numero: 3, nome: "Bagre", img: "./imgs/peixeimg/bagre.jpg", link: "animal-card/bagre.html"},
+                {numero: 4, nome: "Cachara", img: "./imgs/peixeimg/cachara.jpg", link: "animal-card/cachara.html"},
+                {numero: 5, nome: "Curimatã", img: "./imgs/peixeimg/curimata.jpg", link: "animal-card/curimata.html"},
+                {numero: 6, nome: "Dourado", img: "./imgs/peixeimg/Dourado.jpg", link: "animal-card/dourado.html"},
+                {numero: 7, nome: "Jaraqui", img: "./imgs/peixeimg/Jaraqui.jpg", link: "animal-card/jaraqui.html"},
+                {numero: 8, nome: "Lambari", img: "./imgs/peixeimg/lambari.jpg", link: "animal-card/lambari.html"},
+                {numero: 9, nome: "Mandi", img: "./imgs/peixeimg/mandi.jpg", link: "animal-card/mandi.html"},
+                {numero: 10, nome: "Matrinxã", img: "./imgs/peixeimg/matrinxa.jpg", link: "animal-card/matrinxa.html"},
+                {numero: 11, nome: "Pacu", img: "./imgs/peixeimg/Pacu.jpg", link: "animal-card/pacu.html"},
+                {numero: 12, nome: "Piau", img: "./imgs/peixeimg/piau.jpg", link: "animal-card/piau.html"},
+                {numero: 13, nome: "Pintado", img: "./imgs/peixeimg/Pintado.jpg", link: "animal-card/pintado.html"},
+                {numero: 14, nome: "Piracanjuba", img: "./imgs/peixeimg/piracanjuba.jpg", link: "animal-card/piracanjuba.html"},
+                {numero: 15, nome: "Pirapitinga", img: "./imgs/peixeimg/Pirapitinga.JPG", link: "animal-card/pirapitinga.html"},
+                {numero: 16, nome: "Pirarucu", img: "./imgs/peixeimg/pirarucu.jpg", link: "animal-card/pirarucu.html"},
+                {numero: 17, nome: "Surubim", img: "./imgs/peixeimg/surubim.jpg", link: "animal-card/surubim.html"},
+                {numero: 18, nome: "Tambaqui", img: "./imgs/peixeimg/Tambaqui.jpg", link: "animal-card/tambaqui.html"},
+                {numero: 19, nome: "Traíra", img: "./imgs/peixeimg/Traira.jpg", link: "animal-card/Traíra.html"},
+                {numero: 20, nome: "Tucunaré", img: "./imgs/peixeimg/tucunare.jpg", link: "animal-card/tucunare.html"}
 
-        <a href="animal-card/bagre.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/bagre.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#3</span>
-                <h3 class="name">Bagre</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
+            ];
 
-        <a href="animal-card/cachara.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/cachara.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#4</span>
-                <h3 class="name">Cachara</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
+            const containerP = document.getElementById('peixesID');
 
-        <a href="animal-card/curimata.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/curimata.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#5</span>
-                <h3 class="name">Curimatã</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
+            function criarPeixeCard(peixe){
+                return `
+                <a href="${peixe.link}" class="nodecoration">
+                    <div class="animal-peixe">
+                        <div class="imgContainer">
+                            <img src="${peixe.img}" width="150" height="100" alt="${peixe.nome}">
+                        </div>
+                        <div class="info">
+                            <span class="number">#${peixe.numero}</span>
+                            <h3 class="name">${peixe.nome}</h3>
+                            <small class="type-peixe"><span>Peixes</span></small>    
+                        </div>
+                    </div>
+                </a>
+                `;
+            }
 
-        <a href="animal-card/dourado.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/Dourado.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#6</span>
-                <h3 class="name">Dourado</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/jaraqui.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/Jaraqui.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#7</span>
-                <h3 class="name">Jaraqui</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/lambari.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/lambari.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#8</span>
-                <h3 class="name">Lambari</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/mandi.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/mandi.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#9</span>
-                <h3 class="name">Mandi</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/matrinxa.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/matrinxa.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#10</span>
-                <h3 class="name">Matrinxã</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/pacu.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/Pacu.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#11</span>
-                <h3 class="name">Pacu</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/piau.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/piau.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#12</span>
-                <h3 class="name">Piau</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/pintado.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/Pintado.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#13</span>
-                <h3 class="name">Pintado</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/piracanjuba.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/piracanjuba.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#14</span>
-                <h3 class="name">Piracanjuba</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/pirapitinga.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/Pirapitinga.JPG" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#15</span>
-                <h3 class="name">Pirapitinga</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/pirarucu.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/pirarucu.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#16</span>
-                <h3 class="name">Pirarucu</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/surubim.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/surubim.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#17</span>
-                <h3 class="name">Surubim</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/tambaqui.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/Tambaqui.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#18</span>
-                <h3 class="name">Tambaqui</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
-
-        <a href="animal-card/Traíra.html" class="nodecoration"> 
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/Traira.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#19</span>
-                <h3 class="name">Traíra</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a> 
-
-        <a href="animal-card/tucunare.html" class="nodecoration">
-        <div class="animal-peixe">
-            <div class="imgContainer">
-                <img src="imgs/peixeimg/tucunare.jpg" width="150" height="100" alt="apapa">
-            </div>
-            <div class="info">
-                <span class="number">#20</span>
-                <h3 class="name">Tucunaré</h3>
-                <small class="type-peixe"><span>Peixes</span></small>    
-            </div>
-        </div>
-        </a>
+            peixe.forEach(peixe => {
+                containerP.innerHTML += criarPeixeCard(peixe);
+            });
+        </script>
 
         <!--anfibios-->
-            <div id="anfibiosID">
+    <div id="anfibiosID">
             </div>
         </div>
     </div>
@@ -332,8 +125,8 @@
                 anfibio.forEach(anfibio => {
                     container.innerHTML += criarAnfibioCard(anfibio);
                 });
-            </script>
+            </script>   
 
-    
+        </div> 
 </body>
 </html>
