@@ -20,7 +20,7 @@ const animais = [
     {numero: 19, nome: "Traíra", img: "./imgs/peixeimg/Traira.jpg", link: "/animal-card/Traíra.html"},
     {numero: 20, nome: "Tucunaré", img: "./imgs/peixeimg/tucunare.jpg", link: "/animal-card/tucunare.html"},
     {numero: 21, nome: "Rã-touro", img: "./imgs/anfibiosimg/rã touro.jfif", link: "/animal-card/anfibios/Ra-touro.html"},
-    {numero: 22, nome: "Sapo-cururu", img: "./imgs/anfibiosimg/sapo cururu.webp", link: "/animal-card/anfibios/Sapo-cururu.html",apelidos: ["sapo", "cururu", "sapo grande"]},
+    {numero: 22, nome: "Sapo-cururu", img: "./imgs/anfibiosimg/sapo cururu.webp", link: "/animal-card/anfibios/Sapo-cururu.html", apelidos: ["sapo", "cururu", "sapo grande"]},
     {numero: 23, nome: "Salamandra", img: "./imgs/anfibiosimg/salamandra.jpg", link: "/animal-card/anfibios/Salamandra.html"},
     {numero: 24, nome: "Rã-verde", img: "./imgs/anfibiosimg/ra verde.jpg", link: "/animal-card/anfibios/Ra-verde.html"},
     {numero: 25, nome: "Rã-de-vidro", img: "./imgs/anfibiosimg/ra vidro.jfif", link: "/animal-card/anfibios/Ra-de-vidro.html"},
@@ -39,25 +39,25 @@ const animais = [
     {numero: 38, nome: "Tritão-de-crista-italiano", img: "./imgs/anfibiosimg/Tritão-de-crista-italiano.webp", link: "/animal-card/anfibios/Tritao-de-crista-italiano.html"},
     {numero: 39, nome: "Tritão-marmoreado-pigmeu", img: "./imgs/anfibiosimg/Tritão-marmoreado-pigmeu.webp", link: "/animal-card/anfibios/Tritao-marmoreado-pigmeu.html"},
     {numero: 40, nome: "Salamandra-lanzai", img: "./imgs/anfibiosimg/salamandra preta.jfif", link: "/animal-card/anfibios/Salamandra-lanzai.html"},
-    {numero: 41, nome: "Onça Pintada", img: "./imgs/mamiferosimg/onca-pintada.png", link: "/animal-card/mamiferos/onca-pintada.html"},
-    {numero: 42, nome: "Tamanduá Bandeira", img: "./imgs/mamiferosimg/tamandua-bandeira.png", link: "/animal-card/mamiferos/tamandua-bandeira.html"},
-    {numero: 43, nome: "Mico-Leão-Dourado", img: "./imgs/mamiferosimg/mico-leao-dourado.png", link: "/animal-card/mamiferos/mico-leao-dourado.html"},
-    {numero: 44, nome: "Bicho Preguiça", img: "./imgs/mamiferosimg/bicho-preguica.png", link: "/animal-card/mamiferos/bicho-preguica.html"},
+    {numero: 41, nome: "Onça Pintada", img: "./imgs/mamiferosimg/onca-pintada.png", link: "/animal-card/mamiferos/onca-pintada.html",apelidos: ["onca","onça","onca-pintada","onça-pintada"]},
+    {numero: 42, nome: "Tamanduá Bandeira", img: "./imgs/mamiferosimg/tamandua-bandeira.png", link: "/animal-card/mamiferos/tamandua-bandeira.html",apelidos: ["tamandua","tamandua bandeira","tamanduá","tamanduá bandeira","tamandua-bandeira","tamanduá-bandeira"]},
+    {numero: 43, nome: "Mico-Leão-Dourado", img: "./imgs/mamiferosimg/mico-leao-dourado.png", link: "/animal-card/mamiferos/mico-leao-dourado.html",apelidos: ["mico leao","mico leao dourado","mico-leao-dourado","micoleaodourado","mico leão dourado","mico-leão-dourado"]},
+    {numero: 44, nome: "Bicho Preguiça", img: "./imgs/mamiferosimg/bicho-preguica.png", link: "/animal-card/mamiferos/bicho-preguica.html",apelidos: ["bicho preguica","bicho preguiça"]},
     {numero: 45, nome: "Anta", img: "./imgs/mamiferosimg/anta-brasileira.png", link: "/animal-card/mamiferos/anta.html"},
     {numero: 46, nome: "Bugio", img: "./imgs/mamiferosimg/bugio.png", link: "/animal-card/mamiferos/bugio.html"},
     {numero: 47, nome: "Cachorro do mato", img: "./imgs/mamiferosimg/Cachorro-do-mato.png", link: "/animal-card/mamiferos/cachorro-do-mato.html"},
     {numero: 48, nome: "Gambá da orelha preta", img: "./imgs/mamiferosimg/gamba-da-orelha-preta.png", link: "/animal-card/mamiferos/gamba-da-orelha-preta.html"},
     {numero: 49, nome: "Gato maracajá", img: "./imgs/mamiferosimg/gato-maracaja.png", link: "/animal-card/mamiferos/gato-maracaja.html"},
     {numero: 50, nome: "Jaguarundi", img: "./imgs/mamiferosimg/jaguarundi.png", link: "/animal-card/mamiferos/jaguarundi.html"},
-    {numero: 51, nome: "Lobo guará", img: "./imgs/mamiferosimg/lobo-guara.png", link: "/animal-card/mamiferos/lobo-guara.html"},
-    {numero: 52, nome: "Lontra Neotropical", img: "./imgs/mamiferosimg/Lontra-Neotropical.png", link: "/animal-card/mamiferos/lontra-neotropical.html"},
-    {numero: 53, nome: "Macaco aranha", img: "./imgs/mamiferosimg/macaco-aranha.png", link: "/animal-card/mamiferos/macaco-aranha.html"},
-    {numero: 54, nome: "Macaco prego", img: "./imgs/mamiferosimg/macaco-prego.png", link: "/animal-card/mamiferos/macaco-prego.html"},
+    {numero: 51, nome: "Lobo guará", img: "./imgs/mamiferosimg/lobo-guara.png", link: "/animal-card/mamiferos/lobo-guara.html",apelidos: ["loboguara","lobo guara","lobo-guara"]},
+    {numero: 52, nome: "Lontra Neotropical", img: "./imgs/mamiferosimg/Lontra-Neotropical.png", link: "/animal-card/mamiferos/lontra-neotropical.html",apelidos: ["lontra"]},
+    {numero: 53, nome: "Macaco aranha", img: "./imgs/mamiferosimg/macaco-aranha.png", link: "/animal-card/mamiferos/macaco-aranha.html",apelidos: ["macacoaranha","macaco-aranha"]},
+    {numero: 54, nome: "Macaco prego", img: "./imgs/mamiferosimg/macaco-prego.png", link: "/animal-card/mamiferos/macaco-prego.html",apelidos: ["macacoprego","macaco-prego"]},
     {numero: 55, nome: "Porco do Mato", img: "./imgs/mamiferosimg/porco-do-mato.png", link: "/animal-card/mamiferos/porco-do-mato.html"},
     {numero: 56, nome: "Queixada", img: "./imgs/mamiferosimg/queixada.png", link: "/animal-card/mamiferos/queixada.html"},
-    {numero: 57, nome: "Raposa-do-Campo", img: "./imgs/mamiferosimg/raposa-do-campo.png", link: "/animal-card/mamiferos/raposa-do-campo.html"},
-    {numero: 58, nome: "Tatu-bola", img: "./imgs/mamiferosimg/tatu-bola.png", link: "/animal-card/mamiferos/tatu-bola.html"},
-    {numero: 59, nome: "Veado-catingueiro", img: "./imgs/mamiferosimg/veado-catingueiro.png", link: "/animal-card/mamiferos/veado-catingueiro.html"},
+    {numero: 57, nome: "Raposa-do-Campo", img: "./imgs/mamiferosimg/raposa-do-campo.png", link: "/animal-card/mamiferos/raposa-do-campo.html",apelidos: ["raposa"]},
+    {numero: 58, nome: "Tatu-bola", img: "./imgs/mamiferosimg/tatu-bola.png", link: "/animal-card/mamiferos/tatu-bola.html",apelidos: ["tatu", "tatubola","tatu bola"]},
+    {numero: 59, nome: "Veado-catingueiro", img: "./imgs/mamiferosimg/veado-catingueiro.png", link: "/animal-card/mamiferos/veado-catingueiro.html",apelidos: ["viado", "veado","catingueiro"]},
     {numero: 60, nome: "Capivara", img: "./imgs/mamiferosimg/capivara.png", link: "/animal-card/mamiferos/capivara.html"},
 ];
 function removerAcentos(texto) {
@@ -67,7 +67,6 @@ function removerAcentos(texto) {
 function pesquisarAnimal() {
     const input = removerAcentos(document.getElementById("searchInput").value.toLowerCase());
 
-    // Procura o animal pelo nome ou por um de seus apelidos, apenas se 'apelidos' estiver presente
     const animalEncontrado = animais.find(animal => 
         removerAcentos(animal.nome.toLowerCase()) === input || 
         (animal.apelidos?.some(apelido => removerAcentos(apelido.toLowerCase()) === input))
