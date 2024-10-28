@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrasilDex - Cachorro do Mato</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgb(153, 202, 243), #B2E8B0, #5cb65f);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/index.html">BrasilDex</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/home.html">Home</a></li>
+                    <li><a href="/index.html">Coleção</a></li>
+                    <li><a href="/saibamais.html">Saiba Mais!</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+                    <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+                </div>
+            </nav>
+    <a href="#" class="back-button" onclick="window.history.back();">Voltar</a>
+    <div class="card-container-expand">
+        <div class="animal-card-expand">
+            <div class="animal-image">
+                <img src="/imgs/mamiferosimg/Cachorro-do-mato.png" alt="cachorro-do-mato">
+            </div>
+            <div class="animal-info">
+                <h1>Cachorro-do-Mato</h1>
+                <p><strong>Nome Científico:</strong> Canis aureus</p>
+                <p><strong>Classe:</strong> Mamíferos</p>
+                <p><strong>Características:</strong> Corpo esguio, pelagem amarelada e hábitos noturnos.</p>
+                <p><strong>Alimentação:</strong> Onívoro; come pequenos mamíferos, aves e frutas.</p>
+                <p><strong>Altura Média:</strong> 30-60 cm</p>
+                <p><strong>Peso Médio:</strong> 7-15 kg</p>
+                <div class="fun-facts">
+                    <h2>Curiosidades</h2>
+                    <ul>
+                        <br>
+                        <li>Também conhecido como raposa-do-mato, é um canídeo de hábitos solitários.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/BarraDePesquisa.js" ></script>
+</body>
+</html>

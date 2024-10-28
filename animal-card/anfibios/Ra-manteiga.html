@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrasilDex - Rã-manteiga</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgb(153, 202, 243), #B2E8B0, #5cb65f);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html">BrasilDex</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/index.html">Coleção</a></li>
+            <li><a href="/saibamais.html">Saiba Mais!</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+            <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+        </div>
+    </nav>
+<a href="#" class="back-button" onclick="window.history.back();">Voltar</a>
+    <div class="card-container-expand">
+        <div class="animal-card-expand">
+            <div class="animal-image">
+                <img src="../../imgs/anfibiosimg/ra manteiga.webp" alt="Rã-manteiga">
+            </div>
+            <div class="animal-info">
+                <h1>Rã-manteiga</h1>
+                <p><strong>Nome Científico:</strong> Lithobates catesbeianus</p>
+                <p><strong>Classe:</strong> Amphibia (Anfíbios)</p>
+                <p><strong>Características:</strong> Corpo robusto e liso, geralmente apresentando coloração amarelo-oliva ou marrom claro, com uma pele que dá uma aparência brilhante.</p>
+                <p><strong>Alimentação:</strong> Carnívora, alimenta-se de insetos, pequenos peixes e crustáceos.</p>
+                <p><strong>Altura Média:</strong> 10 a 15 cm</p>
+                <p><strong>Peso Médio:</strong> 0,5 a 1 kg</p>
+                <div class="fun-facts">
+                    <h2>Curiosidades</h2>
+                    <ul>
+                        <li>A Rã-manteiga é conhecida por sua carne saborosa e é muitas vezes utilizada na culinária.</li>
+                        <li>Ela tem um comportamento tranquilo e é frequentemente vista em ambientes aquáticos.</li>
+                        <li>Essa espécie é comum em pântanos e lagoas, e pode ser encontrada em várias partes das Américas.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/BarraDePesquisa.js" ></script>
+</body>
+</html>

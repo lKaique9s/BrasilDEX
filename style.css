@@ -1,0 +1,720 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(to bottom, #d4d3dd, #c4e7b2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    letter-spacing: 5px;
+}
+
+.aniContainer, #anfibiosID, #peixesID,#mamiferosID{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.animal-peixe,.animal-anfibio,.animal-ave,.animal-reptil,.animal-mamifero{
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100,100,100,0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.4s ease, height 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    transform-origin: center;  
+    align-items: center; 
+    justify-content: center;
+    height: 270px;
+}
+
+.animal-peixe{
+    background-color: #889cc6;  
+}
+
+.animal-peixe:hover{
+    background-color: #6e88c5;  
+}
+
+.animal-reptil{
+    background-color: #a7d4a7;
+}
+
+.animal-reptil:hover{
+    background-color: #81d181;
+}
+
+.animal-ave{
+    background-color: #bbd1d2;
+}
+
+.animal-ave:hover{
+    background-color: #a6d1d3;
+}
+
+.animal-mamifero{
+    background-color: #d5c5b0;
+}
+
+.animal-mamifero:hover{
+    background-color: #d3b288;
+}
+
+.animal-anfibio{
+    background-color: #cad8b9;
+}
+
+.animal-anfibio:hover{
+    background-color: #b2d488;
+}
+
+.info{
+    margin-top: 20px;
+}
+
+.number{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2.5px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.name{
+    margin: 15px 0 7px;
+    letter-spacing: 1.5px;
+}
+
+.type-mamifero{
+    background: linear-gradient(to bottom, #FFA726 ,  #6D4C41 );
+}
+
+.type-anfibio{
+    background: linear-gradient(to bottom,  #E57373 , #81C784 );
+}
+
+.type-peixe{
+    background: linear-gradient(to bottom, #2196F3  , #0D47A1);   
+}
+
+.type-ave{
+    background: linear-gradient(to bottom, #87CEEB  , #B0BEC5);
+}
+
+.type-reptil{
+    background: linear-gradient(to bottom, #4CAF50  , #1B5E20);
+}
+
+.type-anfibio,.type-ave,.type-mamifero,.type-peixe,.type-reptil{
+    color: #fff;
+    padding: 2.5px 6px;
+    border-radius: 3px;
+}
+
+.nodecoration{
+    text-decoration: none;
+    color: black;
+}
+
+.navbar {
+    background-color: #FF9800;
+    padding: 15px 250px;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 3px 10px;
+    padding: 4px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #fff;
+    border-color: #FF9800;
+    color: #FF9800;
+    border-radius: 6px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.intro {
+    padding: 60px 0px 60px 20px;
+    color: #000000; 
+    text-align: center;
+}
+
+.intro-content {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.intro h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #FF9800; 
+}
+
+.intro p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.intro .cta-button {
+    background-color: #FF9800; 
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #FF9800;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 18px;
+    border: 2px solid transparent;
+    opacity: 0;
+}
+
+.cta-button:hover{
+    background-color: #fff; 
+    color: #FF9800;
+    border: 2px solid #FF9800 ;
+}
+
+
+.highlights {
+    padding: 20px;
+    background-color: #c9d2ce;
+    text-align: center;
+}
+
+.highlights h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.animal-card {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.4s ease, height 0.4s ease;
+}
+
+.animal-card img,
+.animal-peixe img,
+.animal-anfibio img,
+.animal-ave img,
+.animal-reptil img,
+.animal-mamifero img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.5s ease;
+    transform-origin: center; 
+}
+
+.animal-peixe:hover img,
+.animal-mamifero:hover img,
+.animal-anfibio:hover img,
+.animal-reptil:hover img,
+.animal-ave:hover img {
+    transform: scale(1.2    );
+}
+
+.animal-card:hover ,
+.animal-peixe:hover,
+.animal-mamifero:hover,
+.animal-anfibio:hover,
+.animal-reptil:hover,
+.animal-ave:hover{
+    transform: translateY(-10px), scale(1.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    width: 275px;
+    height: 270px;
+}
+
+
+.animal-card img { 
+    height: 100px;
+    width: 150px;  
+}
+
+.animal-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.animal-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.conscientizacao {
+    font-family: monospace;
+    padding: 40px 20px;
+    color: #fff; 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.conscientizacao-content {
+    background: rgba(0, 0, 0, 0.6); 
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.conscientizacao-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.conscientizacao-header i {
+    font-size: 36px; 
+    color: #FFEB3B; 
+    margin-right: 15px;
+}
+
+.conscientizacao-header h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.conscientizacao p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.conscientizacao p:last-child {
+    margin-bottom: 0;
+}
+
+.card-container-expand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.animal-card-expand {
+    display: flex;
+    width: 1000px;
+    background-color: #2196F3   ;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.animal-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.animal-image img {
+    width: 80%; 
+    height: auto; 
+    object-fit: contain; 
+    border: 5px solid #333; 
+    border-radius: 10px; 
+}
+
+.animal-info {
+    width: 50%;
+    padding: 20px;
+}
+
+.animal-info h1 {
+    font-size: 2rem;
+    color: #FF9800;
+    margin-bottom: 10px;
+}
+
+.animal-info p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.animal-info strong {
+    color: #FF9800;
+}
+
+.fun-facts {
+    background-color: #6e88c5;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.fun-facts ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fun-facts li {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #FF9800; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 20px; 
+    display: inline-block; 
+}
+
+.back-button:hover {
+    background-color: #d88303; 
+}
+
+.quiz-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.option {
+    background-color: #FF9800;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #fff;
+    color: #FF9800;
+    border: 2px solid #FF9800;
+}
+
+.hidden {
+    display: none;
+}
+
+.final-message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.back-button {
+    background-color: #FF9800;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #fff;
+    color: #FF9800;
+    border: 2px solid #FF9800;
+}
+
+.next-button {
+    background-color: #FF9800; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.next-button:hover {
+    background-color: #ffa621;
+    transform: scale(1.05);
+}
+.search-bar {
+    display: flex;
+    margin-left: auto; 
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: black;
+}
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+img{
+    max-width: 100%
+}  
+.row {
+    display: flex;
+    flex-wrap: wrap; 
+}
+.col {
+    flex: 1; 
+    min-width: 250px; 
+    margin: 10px; 
+}
+footer {
+    background-color: orange;
+    color: #ecf0f1;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul {
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.category-nav {
+    background-color: orange; 
+    padding: 15px 0; 
+    text-align: center; 
+    border-bottom: 2px solid #ddd; 
+}
+
+.category-nav ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.category-nav li {
+    display: inline-block; 
+    margin: 0 20px; 
+}
+
+.category-nav a {
+    text-decoration: none; 
+    color: #fff; 
+    font-weight: bold; 
+    padding: 8px 12px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.category-nav a:hover {
+    background-color: #e0e0e0; 
+    color: #007bff; 
+}
+
+.animal-card:hover,
+.animal-peixe:hover,
+.animal-mamifero:hover,
+.animal-anfibio:hover,
+.animal-reptil:hover,
+.animal-ave:hover {
+    transform: translateY(-10px) scale(1.1); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.animal-card:hover .cta-button {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+.animal-card {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    height: 300px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.animal-title {
+    font-size: 1.2rem; 
+    margin: 0; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.cta-button {
+    opacity: 0; 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    transform: translateY(10px); 
+    position: relative; 
+    margin-top: auto;
+    display: inline-block; 
+}
+
+.animal-card:hover .cta-button {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+
+.animal-card-content {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+#random-animals {
+    display: flex;
+}
+#random-animals img {
+    width: 100%;
+}
+.cta-button-saiba-mais {
+    display: inline-block;
+    background-color: #FF9800;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 18px;
+    border: 2px solid transparent;
+    background-color: #FF9800; 
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.cta-button-saiba-mais:hover{
+    background-color: #fff; 
+    color: #FF9800;
+    border: 2px solid #FF9800 ;
+}
+
+
