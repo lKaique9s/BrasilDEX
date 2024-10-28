@@ -20,7 +20,7 @@ const animais = [
     {numero: 19, nome: "Traíra", img: "./imgs/peixeimg/Traira.jpg", link: "/animal-card/Traíra.html"},
     {numero: 20, nome: "Tucunaré", img: "./imgs/peixeimg/tucunare.jpg", link: "/animal-card/tucunare.html"},
     {numero: 21, nome: "Rã-touro", img: "./imgs/anfibiosimg/rã touro.jfif", link: "/animal-card/anfibios/Ra-touro.html"},
-    {numero: 22, nome: "Sapo-cururu", img: "./imgs/anfibiosimg/sapo cururu.webp", link: "/animal-card/anfibios/Sapo-cururu.html"},
+    {numero: 22, nome: "Sapo-cururu", img: "./imgs/anfibiosimg/sapo cururu.webp", link: "/animal-card/anfibios/Sapo-cururu.html",apelidos: ["sapo", "cururu", "sapo grande"]},
     {numero: 23, nome: "Salamandra", img: "./imgs/anfibiosimg/salamandra.jpg", link: "/animal-card/anfibios/Salamandra.html"},
     {numero: 24, nome: "Rã-verde", img: "./imgs/anfibiosimg/ra verde.jpg", link: "/animal-card/anfibios/Ra-verde.html"},
     {numero: 25, nome: "Rã-de-vidro", img: "./imgs/anfibiosimg/ra vidro.jfif", link: "/animal-card/anfibios/Ra-de-vidro.html"},
@@ -66,8 +66,11 @@ function removerAcentos(texto) {
 
 function pesquisarAnimal() {
     const input = removerAcentos(document.getElementById("searchInput").value.toLowerCase());
+
+    // Procura o animal pelo nome ou por um de seus apelidos, apenas se 'apelidos' estiver presente
     const animalEncontrado = animais.find(animal => 
-        removerAcentos(animal.nome.toLowerCase()) === input
+        removerAcentos(animal.nome.toLowerCase()) === input || 
+        (animal.apelidos?.some(apelido => removerAcentos(apelido.toLowerCase()) === input))
     );
 
     if (animalEncontrado) {
@@ -76,12 +79,13 @@ function pesquisarAnimal() {
         alert("Animal não encontrado. Tente novamente.");
     }
 }
-const searchInput = document.getElementById("searchInput"); 
-        const searchButton = document.getElementById("search-button");
-    
-        searchInput.addEventListener("keydown", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault(); 
-                searchButton.click();   
-            }
-        });
+
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("search-button");
+
+searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); 
+        searchButton.click();   
+    }
+});
