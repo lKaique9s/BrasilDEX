@@ -393,18 +393,18 @@ h1{
 
 .animal-info h1 {
     font-size: 2rem;
-    color: #FF9800;
+    color: black;
     margin-bottom: 10px;
 }
 
 .animal-info p {
     font-size: 1.2rem;
-    color: #333;
+    color: black;
     margin-bottom: 10px;
 }
 
 .animal-info strong {
-    color: #FF9800;
+    color: black;
 }
 
 .fun-facts {
