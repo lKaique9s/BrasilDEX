@@ -1,5 +1,5 @@
 
-const animaiss = [
+const animaisUnicos = [
     {numero: 1, nome: "Apapá", img: "./imgs/peixeimg/apapa.jpg", link: "/animal-card/Apapa.html"},
     {numero: 2, nome: "Arraia de água doce", img: "./imgs/peixeimg/ArraiaAguaDoce.jpg", link: "/animal-card/arraia.html"},
     {numero: 3, nome: "Bagre", img: "./imgs/peixeimg/bagre.jpg", link: "/animal-card/bagre.html"},
@@ -125,30 +125,10 @@ const curiosidades = [
 ];
 
 
-function getRandomAnimals() {
-    const randomIndices = new Set();
-    while (randomIndices.size < 2) {
-        const randomIndex = Math.floor(Math.random() * animais.length);
-        randomIndices.add(randomIndex);
-    }
-
-    return Array.from(randomIndices).map(index => animais[index]);
-}
-
-function getRandomAnimals() {
-    const randomIndices = new Set();
-    while (randomIndices.size < 2) {
-        const randomIndex = Math.floor(Math.random() * animais.length);
-        randomIndices.add(randomIndex);
-    }
-
-    return Array.from(randomIndices).map(index => animais[index]);
-}
-
 function getRandomAnimalIndices() {
     const randomIndices = new Set();
     while (randomIndices.size < 2) {
-        const randomIndex = Math.floor(Math.random() * animais.length);
+        const randomIndex = Math.floor(Math.random() * animaisUnicos.length);
         randomIndices.add(randomIndex);
     }
     return Array.from(randomIndices);
@@ -157,10 +137,11 @@ function getRandomAnimalIndices() {
 function displayRandomAnimals() {
     const [index1, index2] = getRandomAnimalIndices();
     
-    const animal1 = animais[index1];
-    const animal2 = animais[index2];
-    const curiosidade1 = curiosidades[index1];
-    const curiosidade2 = curiosidades[index2];
+    const animal1 = animaisUnicos[index1];
+    const animal2 = animaisUnicos[index2];
+
+    const curiosidade1 = curiosidades.find(c => c.numero === animal1.numero)?.curiosidade;
+    const curiosidade2 = curiosidades.find(c => c.numero === animal2.numero)?.curiosidade;
     
     const animalContainer = document.getElementById("random-animals");
     animalContainer.innerHTML = '';
@@ -170,6 +151,7 @@ function displayRandomAnimals() {
     card1.innerHTML = `
         <img src="${animal1.img}" alt="${animal1.nome}">
         <h2>${animal1.nome}</h2>
+        <p>${curiosidade1}</p>
         <a href="${animal1.link}" class="cta-button">Ver Mais</a>
     `;
 
@@ -178,16 +160,15 @@ function displayRandomAnimals() {
     card2.innerHTML = `
         <img src="${animal2.img}" alt="${animal2.nome}">
         <h2>${animal2.nome}</h2>
+        <p>${curiosidade2}</p>
         <a href="${animal2.link}" class="cta-button">Ver Mais</a>
     `;
 
     animalContainer.appendChild(card1);
     animalContainer.appendChild(card2);
-
-    document.getElementById("animal-curiosity1").textContent = curiosidade1;
-    document.getElementById("animal-curiosity2").textContent = curiosidade2;
 }
 
-window.onload = displayRandomAnimals;
-
+document.addEventListener("DOMContentLoaded", function() {
+    displayRandomAnimals();
+});
 
