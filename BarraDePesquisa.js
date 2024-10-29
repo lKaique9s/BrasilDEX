@@ -88,7 +88,8 @@ searchInput.addEventListener("keydown", function(event) {
         searchButton.click();   
     }
 });
-animais.forEach(animal => {
-    todos = console.log(console.table([{ nome: animal.nome }])); 
-});
-copy(todos);
+window.onload = function() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.value = ''; 
+};
+
