@@ -724,5 +724,11 @@ footer {
     color: #FF9800;
     border: 2px solid #FF9800 ;
 }
+#email{
+    text-decoration: none;
+}
+#email:hover{
+    text-decoration: underline;
+}
 
 
