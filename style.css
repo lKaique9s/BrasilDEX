@@ -168,6 +168,7 @@ h1{
     margin: 3px 10px;
     padding: 4px 15px;
     transition: background-color 0.3s ease;
+    border-radius: 6px;
 }
 
 .nav-links li a:hover {
