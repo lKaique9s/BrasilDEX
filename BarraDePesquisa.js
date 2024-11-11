@@ -92,4 +92,14 @@ window.onload = function() {
     const searchInput = document.getElementById('searchInput');
     searchInput.value = ''; 
 };
+window.onload = function() {
+    const logoLink = document.querySelector('.navbar .logo a');
+
+    const logoImg = document.createElement('img');
+    logoImg.src = '/imgs/logo/logo-png-branca.png';
+    logoImg.setAttribute('style', 'height: 40px; position: relative; right: 180px;');
+
+    logoLink.prepend(logoImg);
+};
+
 
