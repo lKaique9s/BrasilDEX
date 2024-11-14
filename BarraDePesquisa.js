@@ -101,5 +101,12 @@ window.onload = function() {
 
     logoLink.prepend(logoImg);
 };
+const link = document.createElement("link");
+link.rel = "icon";
+link.href = "/imgs/logo/laranja-escrita.png";
+
+// Adiciona o elemento ao <head>
+document.head.appendChild(link);
+
 
 
