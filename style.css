@@ -363,7 +363,7 @@ h1{
 .animal-card-expand {
     display: flex;
     width: 1000px;
-    background-color: #2196F3   ;
+    background-color: #E0FFE0   ;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -393,14 +393,15 @@ h1{
 
 .animal-info h1 {
     font-size: 2rem;
-    color: black;
+    color: #2E8B57;
     margin-bottom: 10px;
 }
 
 .animal-info p {
     font-size: 1.2rem;
-    color: black;
+    color: #4F4F4F;
     margin-bottom: 10px;
+    font-weight:500;
 }
 
 .animal-info strong {
@@ -408,7 +409,7 @@ h1{
 }
 
 .fun-facts {
-    background-color: #6e88c5;
+    background-color: #B0C4DE;
     border-radius: 10px;
     padding: 10px;
     margin-top: 20px;
@@ -776,6 +777,4 @@ footer {
 .navbar .logo {
     margin-left: 20px; 
 }
-
-
 
