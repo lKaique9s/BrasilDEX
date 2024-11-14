@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrasilDex - Tritão-Marmoreado-Pigmeu</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgb(153, 202, 243), #B2E8B0, #5cb65f);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html">BrasilDex</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/index.html">Coleção</a></li>
+            <li><a href="/saibamais.html">Saiba Mais!</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+            <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+        </div>
+    </nav>
+<a href="#" class="back-button" onclick="window.history.back();">Voltar</a>
+    <div class="card-container-expand">
+        <div class="animal-card-expand">
+            <div class="animal-image">
+                <img src="../../imgs/anfibiosimg/Tritão-marmoreado-pigmeu.webp" alt="Tritão-Marmoreado-Pigmeu">
+            </div>
+            <div class="animal-info">
+                <h1>Tritão-Marmoreado-Pigmeu</h1>
+                <p><strong>Nome Científico:</strong> Lissotriton vulgaris</p>
+                <p><strong>Classe:</strong> Amphibia (Anfíbios)</p>
+                <p><strong>Características:</strong> Pequeno e esguio, com uma coloração que varia do verde ao marrom com manchas escuras, apresentando uma textura levemente rugosa na pele.</p>
+                <p><strong>Alimentação:</strong> Carnívora, alimenta-se principalmente de pequenos invertebrados aquáticos.</p>
+                <p><strong>Altura Média:</strong> 6 a 8 cm</p>
+                <p><strong>Peso Médio:</strong> 0,005 a 0,01 kg</p>
+                <div class="fun-facts">
+                    <h2>Curiosidades</h2>
+                    <ul>
+                        <li>O Tritão-Marmoreado-Pigmeu é uma das menores espécies de tritões.</li>
+                        <li>É conhecido por sua habilidade de regenerar membros perdidos.</li>
+                        <li>Habita principalmente áreas úmidas e florestas próximas a corpos d'água.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/BarraDePesquisa.js" ></script>
+</body>
+</html>
