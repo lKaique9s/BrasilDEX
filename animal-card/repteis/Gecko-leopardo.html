@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrasilDex - Gecko Leopardo</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgb(153, 202, 243), #B2E8B0, #5cb65f);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/index.html">BrasilDex</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/home.html">Home</a></li>
+                    <li><a href="/index.html">Coleção</a></li>
+                    <li><a href="/saibamais.html">Saiba Mais!</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+                    <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+                </div>
+            </nav>
+    <a href="#" class="back-button" onclick="window.history.back();">Voltar</a>
+    <div class="card-container-expand">
+        <div class="animal-card-expand">
+            <div class="animal-image">
+                <img src="/imgs/repteisimg/GeckoLeopardo.jpg" alt="Cotiarinha">
+            </div>
+            <div class="animal-info">
+                <h1>Gecko Leopardo</h1>
+                <p><strong>Nome Científico:</strong> Eublepharis macularius</p>
+                <p><strong>Classe:</strong> Reptilia</p>
+                <p><strong>Características:</strong> O seu corpo é cilíndrico e compacto e ligeiramente achatado na parte superior. Têm uma cabeça proeminente e olhos grandes dispostos lateralmente.</p>
+                <p><strong>Alimentação:</strong> Carnívoro (Insetos e aracnídeos).</p>
+                <p><strong>Altura Média:</strong> 25cm.</p>
+                <p><strong>Peso Médio:</strong> 60g </p>
+                <div class="fun-facts">
+                    <h2>Curiosidades</h2>
+                    <ul>
+                        <br>
+                        <li> Os geckos ficaram extremamente famosos como pet e por isso criaram várias
+                            variações, podendo ter cores de pele diferentes, olhos de cores diferentes. Os geckos são
+                            animais crepusculares e noturnos, sendo mais ativos nesses períodos do dia.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/BarraDePesquisa.js" ></script>
+</body>
+</html>

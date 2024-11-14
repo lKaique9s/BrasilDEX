@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrasilDex - Jararaca Caiçaca</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgb(153, 202, 243), #B2E8B0, #5cb65f);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/index.html">BrasilDex</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/home.html">Home</a></li>
+                    <li><a href="/index.html">Coleção</a></li>
+                    <li><a href="/saibamais.html">Saiba Mais!</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+                    <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+                </div>
+            </nav>
+    <a href="#" class="back-button" onclick="window.history.back();">Voltar</a>
+    <div class="card-container-expand">
+        <div class="animal-card-expand">
+            <div class="animal-image">
+                <img src="/imgs/repteisimg/Jararaca-Caiçaca.jpg" alt="Cotiarinha">
+            </div>
+            <div class="animal-info">
+                <h1>Jararaca Caiçaca</h1>
+                <p><strong>Nome Científico:</strong> Bothrops moojeni</p>
+                <p><strong>Classe:</strong> Reptilia</p>
+                <p><strong>Características:</strong>  Essa espécie de Jararaca apresenta normalmente coloração que varia do pardo ao verde claro, com losangos invertidos no dorso e ventre amarelado.</p>
+                <p><strong>Alimentação:</strong> Pequenos roedores e aves.</p>
+                <p><strong>Altura Média:</strong> 1 m.</p>
+                <p><strong>Peso Médio:</strong> 2 kg </p>
+                <div class="fun-facts">
+                    <h2>Curiosidades</h2>
+                    <ul>
+                        <br>
+                        <li>  Essa espécie de serpente é responsável pela maioria dos acidentes ofídicos ocorridos no Brasil, resultado da degradação de seu habitat e consequente procura por recursos em ambientes urbanos. Animal considerado muito agressivo, podendo desferir botes verticais.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/BarraDePesquisa.js" ></script>
+</body>
+</html>

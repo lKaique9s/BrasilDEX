@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saiba Mais!</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         h1 {
             font-size: 3rem;
@@ -60,17 +62,25 @@
 
     </style>
 </head>
-<body style="background: linear-gradient(to right, #f5f7fa, #c3cfe2); font-family: 'Lato', sans-serif;color: #333;">
+<body  style="background: linear-gradient(to right, #f5f7fa, #c3cfe2); font-family: 'Lato', sans-serif;color: #333;">
+    
+    
     <section>
         <nav class="navbar">
+
             <div class="logo">
-                <a href="index.html">BrasilDex</a>
+                <a href="/home.html"></a>
             </div>
-                <ul class="nav-links">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="index.html">Coleção</a></li>
-                    <li><a href="saibamais.html">Saiba Mais!</a></li>
-                </ul>
+            <ul class="nav-links">
+                <a href="/home.html">BrasilDex</a>
+                <li><a href="/home.html">Home</a></li>
+                <li><a href="/index.html">Coleção</a></li>
+                <li><a href="/saibamais.html">Saiba Mais!</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+                <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+            </div>
         </nav>
     </section>
     <h1>Saiba Mais!</h1>
@@ -176,9 +186,48 @@
         <section class="intro">
             <div class="intro-content">
                 <h1>Você acha que esta pronto?</h1>
-                <a href="quiz.html" class="cta-button">Teste seu aprendizado!</a>
+                <a href="quiz.html" class="cta-button-saiba-mais">Teste seu aprendizado!</a>
             </div>
         </section>
     </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>Conheça a BrasilDex, um projeto dedicado à fauna brasileira. Descubra mais sobre os animais que habitam nosso país.</p>
+                <img src="/imgs/logo/bd-png.png" style="margin-top: 30px; margin-right: 20px;">
+            </div>
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="/home.html">Home</a></li>
+                    <li><a href="/index.html">Coleção</a></li>
+                    <li><a href="#footer">Contatos</a></li>
+                    <li><a href="/saibamais.html">Saiba mais</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><a style="font-weight:bold ;">Email</a>: <a id="email" href="mailto:Brasildex@gmail.com" style="color: #fff;"> Brasildex@gmail.com</a></p>
+                <br>
+                <p><a style="font-weight:bold ;">Telefone:</a> (34) 3677-4249</p>
+                <div class="icon-area">
+                    <div class="icon">
+                        <a href="https://api.whatsapp.com/send?phone=5538998946799&text=Olá, desejo falar com você sobre o Projeto BrasilDex!" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://www.instagram.com/brasildex_ofc/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BrasilDex. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="/BarraDePesquisa.js" ></script>
 </body>
 </html>

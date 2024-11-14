@@ -4,24 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BrasilDex</title>
 </head>
 <body>
     <nav class="navbar">
+
         <div class="logo">
-            <a href="index.html">BrasilDex</a>
+            <a href="/home.html"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="index.html">Coleção</a></li>
-            <li><a href="saibamais.html">Saiba Mais!</a></li>
+            <a href="/home.html">BrasilDex</a>
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/index.html">Coleção</a></li>
+            <li><a href="/saibamais.html">Saiba Mais!</a></li>
         </ul>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+            <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+        </div>
     </nav>
+<div class="category-nav">
+    <ul>
+        <li><a href="#peixesID">Peixes</a></li>
+        <li><a href="#anfibiosID">Anfíbios</a></li>
+        <li><a href="#mamiferosID">Mamíferos</a></li>
+        <li><a href="#RepteisID">Répteis</a></li>
+        <li><a href="#avesID">Aves</a></li>
+    </ul>
+</div>
+
     <div class="aniContainer" id="aniContainer" style="margin-top: 30px;">
 
-                <!-- Peixes -->
-        <div id="peixesID">
-        </div>
+        <div id="peixesID"></div>
 
         <script>
             const peixe = [
@@ -44,8 +61,7 @@
                 {numero: 17, nome: "Surubim", img: "./imgs/peixeimg/surubim.jpg", link: "animal-card/surubim.html"},
                 {numero: 18, nome: "Tambaqui", img: "./imgs/peixeimg/Tambaqui.jpg", link: "animal-card/tambaqui.html"},
                 {numero: 19, nome: "Traíra", img: "./imgs/peixeimg/Traira.jpg", link: "animal-card/Traíra.html"},
-                {numero: 20, nome: "Tucunaré", img: "./imgs/peixeimg/tucunare.jpg", link: "animal-card/tucunare.html"}
-
+                {numero: 20, nome: "Tucunaré", img: "./imgs/peixeimg/tucunare.jpg", link: "animal-card/tucunare.html"},
             ];
 
             const containerP = document.getElementById('peixesID');
@@ -72,13 +88,10 @@
             });
         </script>
 
-        <!--anfibios-->
-    <div id="anfibiosID">
-            </div>
-        </div>
-    </div>
-            <script>
-                const anfibio = [
+        <div id="anfibiosID"></div>
+
+        <script>
+            const anfibio = [
                 {numero: 21, nome: "Rã-touro", img: "./imgs/anfibiosimg/rã touro.jfif", link: "./animal-card/anfibios/Ra-touro.html"},
                 {numero: 22, nome: "Sapo-cururu", img: "./imgs/anfibiosimg/sapo cururu.webp", link: "./animal-card/anfibios/Sapo-cururu.html"},
                 {numero: 23, nome: "Salamandra", img: "./imgs/anfibiosimg/salamandra.jpg", link: "./animal-card/anfibios/Salamandra.html"},
@@ -101,13 +114,11 @@
                 {numero: 40, nome: "Salamandra-lanzai", img: "./imgs/anfibiosimg/salamandra preta.jfif", link: "./animal-card/anfibios/Salamandra-lanzai.html"}
             ];
 
+            const containerA = document.getElementById('anfibiosID');
 
-                const container = document.getElementById('anfibiosID');
-
-                function criarAnfibioCard(anfibio){
-                    return`
-                    
-                    <a href="${anfibio.link}" class="nodecoration">
+            function criarAnfibioCard(anfibio) {
+                return `
+                <a href="${anfibio.link}" class="nodecoration">
                     <div class="animal-anfibio">
                         <div class="imgContainer">
                             <img src="${anfibio.img}" width="150" height="100" alt="${anfibio.nome}">
@@ -115,18 +126,178 @@
                         <div class="info">
                             <span class="number">#${anfibio.numero}</span>
                             <h3 class="name">${anfibio.nome}</h3>
-                            <small class="type-anfibio"><span>Anfibios</span></small>    
+                            <small class="type-anfibio"><span>Anfíbios</span></small>    
                         </div>
                     </div>
+                </a>
+                `;
+            }
+
+            anfibio.forEach(anfibio => {
+                containerA.innerHTML += criarAnfibioCard(anfibio);
+            });
+        </script>   
+
+        <div id="mamiferosID"></div>
+
+        <script>
+            const mamiferos = [
+                {numero: 41, nome: "Onça Pintada", img: "./imgs/mamiferosimg/onca-pintada.png", link: "./animal-card/mamiferos/onca-pintada.html"},
+                {numero: 42, nome: "Tamanduá Bandeira", img: "./imgs/mamiferosimg/tamandua-bandeira.png", link: "./animal-card/mamiferos/tamandua-bandeira.html"},
+                {numero: 43, nome: "Mico-Leão-Dourado", img: "./imgs/mamiferosimg/mico-leao-dourado.png", link: "./animal-card/mamiferos/mico-leao-dourado.html"},
+                {numero: 44, nome: "Bicho Preguiça", img: "./imgs/mamiferosimg/bicho-preguica.png", link: "./animal-card/mamiferos/bicho-preguica.html"},
+                {numero: 45, nome: "Anta", img: "./imgs/mamiferosimg/anta-brasileira.png", link: "./animal-card/mamiferos/anta.html"},
+                {numero: 46, nome: "Bugio", img: "./imgs/mamiferosimg/bugio.png", link: "./animal-card/mamiferos/bugio.html"},
+                {numero: 47, nome: "Cachorro do mato", img: "./imgs/mamiferosimg/Cachorro-do-mato.png", link: "./animal-card/mamiferos/cachorro-do-mato.html"},
+                {numero: 48, nome: "Gambá da orelha preta", img: "./imgs/mamiferosimg/gamba-da-orelha-preta.png", link: "./animal-card/mamiferos/gamba-da-orelha-preta.html"},
+                {numero: 49, nome: "Gato maracajá", img: "./imgs/mamiferosimg/gato-maracaja.png", link: "./animal-card/mamiferos/gato-maracaja.html"},
+                {numero: 50, nome: "Jaguarundi", img: "./imgs/mamiferosimg/jaguarundi.png", link: "./animal-card/mamiferos/jaguarundi.html"},
+                {numero: 51, nome: "Lobo guará", img: "./imgs/mamiferosimg/lobo-guara.png", link: "./animal-card/mamiferos/lobo-guara.html"},
+                {numero: 52, nome: "Lontra Neotropical", img: "./imgs/mamiferosimg/Lontra-Neotropical.png", link: "./animal-card/mamiferos/lontra-neotropical.html"},
+                {numero: 53, nome: "Macaco aranha", img: "./imgs/mamiferosimg/macaco-aranha.png", link: "./animal-card/mamiferos/macaco-aranha.html"},
+                {numero: 54, nome: "Macaco prego", img: "./imgs/mamiferosimg/macaco-prego.png", link: "./animal-card/mamiferos/macaco-prego.html"},
+                {numero: 55, nome: "Porco do Mato", img: "./imgs/mamiferosimg/porco-do-mato.png", link: "./animal-card/mamiferos/porco-do-mato.html"},
+                {numero: 56, nome: "Queixada", img: "./imgs/mamiferosimg/queixada.png", link: "./animal-card/mamiferos/queixada.html"},
+                {numero: 57, nome: "Raposa-do-Campo", img: "./imgs/mamiferosimg/raposa-do-campo.png", link: "./animal-card/mamiferos/raposa-do-campo.html"},
+                {numero: 58, nome: "Tatu-bola", img: "./imgs/mamiferosimg/tatu-bola.png", link: "./animal-card/mamiferos/tatu-bola.html"},
+                {numero: 59, nome: "Veado-catingueiro", img: "./imgs/mamiferosimg/veado-catingueiro.png", link: "./animal-card/mamiferos/veado-catingueiro.html"},
+                {numero: 60, nome: "Capivara", img: "./imgs/mamiferosimg/capivara.png", link: "./animal-card/mamiferos/capivara.html"},
+            ];
+
+            const containerM = document.getElementById('mamiferosID');
+
+            function criarMamiferoCard(mamifero) {
+                return `
+                    <a href="${mamifero.link}" class="nodecoration">
+                        <div class="animal-mamifero">
+                            <div class="imgContainer">
+                                <img src="${mamifero.img}" width="150" height="100" alt="${mamifero.nome}">
+                            </div>
+                            <div class="info">
+                                <span class="number">#${mamifero.numero}</span>
+                                <h3 class="name">${mamifero.nome}</h3>
+                                <small class="type-mamifero"><span>Mamíferos</span></small>    
+                            </div>
+                        </div>
                     </a>
-                `
-                }
+                    `;
+            }
 
-                anfibio.forEach(anfibio => {
-                    container.innerHTML += criarAnfibioCard(anfibio);
+            mamiferos.forEach(mamifero => {
+                containerM.innerHTML += criarMamiferoCard(mamifero);
+            });
+        </script>
+        
+        <div id="RepteisID"></div>
+
+        <script>
+            const repteis = [
+                {numero: 61, nome: "Aperema", img: "./imgs/repteisimg/aperema.jpg" ,link: "./animal-card/repteis/Aperema.html"},
+                {numero: 62, nome: "Cascavel",img: "./imgs/repteisimg/cascavel.jpg" ,link: "./animal-card/repteis/cascavel.html"},
+                {numero: 63, nome: "Cobra do Milho",img: "./imgs/repteisimg/COBRA-DO-MILHO.jpg" ,link: "./animal-card/repteis/cobra-do-milho.html"},
+                {numero: 64, nome: "Cotiarinha",img: "./imgs/repteisimg/cotiarinha.jpg" ,link: "./animal-card/repteis/cotiarinha.html"},
+                {numero: 65, nome: "Dragão Barbudo",img: "./imgs/repteisimg/Dragão-barbudo.jpg" ,link: "./animal-card/repteis/Dragão-barbudo.html"},
+                {numero: 66, nome: "Gecko Leopardo",img: "./imgs/repteisimg/GeckoLeopardo.jpg" ,link: "./animal-card/repteis/Gecko-leopardo.html"},
+                {numero: 67, nome: "Iguana",img: "./imgs/repteisimg/iguana.jpg" ,link: "./animal-card/repteis/Iguana.html"},
+                {numero: 68, nome: "Jabuti Piranga",img: "./imgs/repteisimg/Jabuti-piranga.jpg" ,link: "./animal-card/repteis/Jabuti-piranga.html"},
+                {numero: 69, nome: "Jabuti Tinga",img: "./imgs/repteisimg/Jabuti-tinga.jpg" ,link: "./animal-card/repteis/Jabuti-tinga.html"},
+                {numero: 70, nome: "Jacaré do Pantanal",img: "./imgs/repteisimg/JacaréPantanal.jpg" ,link: "./animal-card/repteis/Jacaré-do-pantanal.html"},
+                {numero: 71, nome: "Jacaré Tinga",img: "./imgs/repteisimg/Jacaré-tinga.jpg" ,link: "./animal-card/repteis/Jacaré-tinga.html"},
+                {numero: 72, nome: "Jararaca Caiçaca ",img: "./imgs/repteisimg/Jararaca-caiçaca.jpg" ,link: "./animal-card/repteis/Jararaca-caiçaca.html"},
+                {numero: 73, nome: "Jararaca Pintada",img: "./imgs/repteisimg/Jararaca-pintada.jpg" ,link: "./animal-card/repteis/jararaca-pintada.html"},
+                {numero: 74, nome: "Jararacuçu",img: "./imgs/repteisimg/jararacucu.jpg" ,link: "./animal-card/repteis/Jararacuçu.html"},
+                {numero: 75, nome: "Jiboia Arco Íris",img: "./imgs/repteisimg/Jiboia-arco-iris.jpg" ,link: "./animal-card/repteis/Jiboia-arco-íris.html"},
+                {numero: 76, nome: "Jiboia",img: "./imgs/repteisimg/Jiboia.jpg" ,link: "./animal-card/repteis/Jiboia.html"},
+                {numero: 77, nome: "Muçuã",img: "./imgs/repteisimg/Muçua.jpg" ,link: "./animal-card/repteis/Muçuã.html"},
+                {numero: 78, nome: "Sucuri Verde",img: "./imgs/repteisimg/Sucuri.jpg" ,link: "./animal-card/repteis/Sucuri-verde.html"},
+                {numero: 79, nome: "Tartaruga da Amazônia",img: "./imgs/repteisimg/Tartaruga-da-amazonia.jpg" ,link: "./animal-card/repteis/Tartaruga-da-Amazônia.html"},
+                {numero: 80, nome: "Tigre d’água sul americano",img: "./imgs/repteisimg/Tigre-dgua.jpg" ,link: "./animal-card/repteis/Tigre-d’água-sul-americano.html"},
+            ];
+
+            const containerR = document.getElementById('RepteisID');
+
+            function criarReptilCard(reptil) {
+                return `
+                    <a href="${reptil.link}" class="nodecoration">
+                        <div class="animal-reptil">
+                            <div class="imgContainer">
+                                <img src="${reptil.img}" width="150" height="100" alt="${reptil.nome}">
+                            </div>
+                            <div class="info">
+                                <span class="number">#${reptil.numero}</span>
+                                <h3 class="name">${reptil.nome}</h3>
+                                <small class="type-reptil"><span>Répteis</span></small>    
+                            </div>
+                        </div>
+                    </a>
+                    `;
+            }
+
+            repteis.forEach(reptil => {
+                containerR.innerHTML += criarReptilCard(reptil);
+            });
+        </script>
+
+    </div> 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollPosition = sessionStorage.getItem("scrollPosition");
+            if (scrollPosition && document.referrer.includes("animal-card")) {
+                window.scrollTo(0, parseInt(scrollPosition));
+                sessionStorage.removeItem("scrollPosition"); 
+            }
+    
+            document.querySelectorAll('.animal-link').forEach(link => {
+                link.addEventListener("click", () => {
+                    sessionStorage.setItem("scrollPosition", window.scrollY);
                 });
-            </script>   
-
-        </div> 
+            });
+    
+            document.querySelectorAll('.home-link, .colecao-link,').forEach(link => {
+                link.addEventListener("click", () => {
+                    sessionStorage.removeItem("scrollPosition");
+                });
+            });
+        });
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>Conheça a BrasilDex, um projeto dedicado à fauna brasileira. Descubra mais sobre os animais que habitam nosso país.</p>
+                <img src="/imgs/logo/bd-png.png" style="margin-top: 30px; margin-right: 20px;">
+            </div>
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="/home.html">Home</a></li>
+                    <li><a href="/index.html">Coleção</a></li>
+                    <li><a href="#footer">Contatos</a></li>
+                    <li><a href="/saibamais.html">Saiba mais</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><a style="font-weight:bold ;">Email</a>: <a id="email" href="mailto:Brasildex@gmail.com" style="color: #fff;"> Brasildex@gmail.com</a></p>
+                <br>
+                <p><a style="font-weight:bold ;">Telefone:</a> (34) 3677-4249</p>
+                <div class="icon-area">
+                    <div class="icon">
+                        <a href="https://api.whatsapp.com/send?phone=5538998946799&text=Olá, desejo falar com você sobre o Projeto BrasilDex!" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://www.instagram.com/brasildex_ofc/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>
+                    <div class="icon">
+                        <a href="#"><i class="fa fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BrasilDex. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="/BarraDePesquisa.js" ></script>
 </body>
 </html>

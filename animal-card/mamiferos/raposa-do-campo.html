@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrasilDex - Raposa do Campo</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgb(153, 202, 243), #B2E8B0, #5cb65f);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/index.html">BrasilDex</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/home.html">Home</a></li>
+                    <li><a href="/index.html">Coleção</a></li>
+                    <li><a href="/saibamais.html">Saiba Mais!</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+                    <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+                </div>
+            </nav>
+    <a href="#" class="back-button" onclick="window.history.back();">Voltar</a>
+    <div class="card-container-expand">
+        <div class="animal-card-expand">
+            <div class="animal-image">
+                <img src="/imgs/mamiferosimg/raposa-do-campo.png" alt="raposa-do-campo">
+            </div>
+            <div class="animal-info">
+                <h1>Raposa-do-Campo</h1>
+                <p><strong>Nome Científico:</strong> Lycalopex vetulus</p>
+                <p><strong>Classe:</strong> Mamíferos</p>
+                <p><strong>Características:</strong> Canídeo pequeno, com pelagem cinza, orelhas grandes e focinho alongado. É ágil e adaptável ao ambiente.
+                </p>
+                <p><strong>Alimentação:</strong>  Onívora, alimenta-se de frutas, insetos, pequenos mamíferos e aves</p>
+                <p><strong>Altura Média:</strong> 30-50 cm</p>
+                <p><strong>Peso Médio:</strong> 5-10 kg</p>
+                <div class="fun-facts">
+                    <h2>Curiosidades</h2>
+                    <ul>
+                        <br>
+                        <li>É um animal solitário, normalmente ativo durante o crepúsculo e a noite.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/BarraDePesquisa.js" ></script>
+</body>
+</html>

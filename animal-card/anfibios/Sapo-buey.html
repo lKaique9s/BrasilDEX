@@ -20,15 +20,19 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <a href="../../index.html">BrasilDex</a>
+            <a href="/index.html">BrasilDex</a>
         </div>
         <ul class="nav-links">
-            <li><a href="../../home.html">Home</a></li>
-            <li><a href="../../index.html">Coleção</a></li>
-            <li><a href="../../saibamais.html">Saiba Mais!</a></li>
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/index.html">Coleção</a></li>
+            <li><a href="/saibamais.html">Saiba Mais!</a></li>
         </ul>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+            <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+        </div>
     </nav>
-    <a href="../../index.html" class="back-button">Voltar</a> 
+<a href="#" class="back-button" onclick="window.history.back();">Voltar</a>
     <div class="card-container-expand">
         <div class="animal-card-expand">
             <div class="animal-image">
@@ -53,5 +57,6 @@
             </div>
         </div>
     </div>
+    <script src="/BarraDePesquisa.js" ></script>
 </body>
 </html>

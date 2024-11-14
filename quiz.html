@@ -25,6 +25,15 @@
             margin-bottom: 20px;
         }
 
+        .correct {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+        }
+
+        .wrong {
+            background-color: #f44336; /* Vermelho */
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +57,6 @@
 
         <div class="hidden" id="final-result">
             <p class="final-message" id="final-message"></p>
-            <button class="back-button" onclick="window.location.href='saibamais.html'">Voltar</button>
         </div>
     </div>
 
@@ -86,24 +94,42 @@
 
         function loadQuestion() {
             const currentQuestion = questions[currentQuestionIndex];
-            document.getElementById('question').textContent = currentQuestion.question;
-            document.getElementById('option1').textContent = currentQuestion.options[0];
-            document.getElementById('option2').textContent = currentQuestion.options[1];
-            document.getElementById('option3').textContent = currentQuestion.options[2];
-            document.getElementById('option4').textContent = currentQuestion.options[3];
-            document.getElementById('correct-answer').classList.add('hidden');
-            document.getElementById('wrong-answer').classList.add('hidden');
-            document.getElementById('final-result').classList.add('hidden');
-            enableOptions();
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => {
+            opt.classList.remove('correct', 'wrong'); 
+            opt.style.pointerEvents = 'auto'; 
+    });
+
+    document.getElementById('question').textContent = currentQuestion.question;
+    document.getElementById('option1').textContent = currentQuestion.options[0];
+    document.getElementById('option2').textContent = currentQuestion.options[1];
+    document.getElementById('option3').textContent = currentQuestion.options[2];
+    document.getElementById('option4').textContent = currentQuestion.options[3];
+    
+    document.getElementById('correct-answer').classList.add('hidden');
+    document.getElementById('wrong-answer').classList.add('hidden');
         }
 
         function checkAnswer(selectedOption) {
             const currentQuestion = questions[currentQuestionIndex];
+            const options = document.querySelectorAll('.option');
+            
+            options.forEach(opt => {
+                opt.classList.remove('correct', 'wrong');
+            });
+            
             if (selectedOption.textContent.trim() === currentQuestion.answer) {
                 correctAnswersCount++;
+                selectedOption.classList.add('correct');
                 document.getElementById('correct-answer').classList.remove('hidden');
                 document.getElementById('wrong-answer').classList.add('hidden');
             } else {
+                selectedOption.classList.add('wrong');
+                options.forEach(opt => {
+                    if (opt.textContent.trim() === currentQuestion.answer) {
+                        opt.classList.add('correct'); 
+                    }
+                });
                 document.getElementById('wrong-answer').classList.remove('hidden');
                 document.getElementById('correct-answer').classList.add('hidden');
             }
@@ -169,13 +195,12 @@
                     break;
             }
 
-            document.getElementById('final-message').textContent = `${message} Você é ${rank}!`;
+            document.getElementById('final-message').textContent = `${message} Você é um ${rank}.`;
             document.getElementById('final-result').classList.remove('hidden');
-            document.getElementById('correct-answer').classList.add('hidden');
-            document.getElementById('wrong-answer').classList.add('hidden');
         }
 
         loadQuestion();
     </script>
+    <a href="/home.html" class="back-button">Voltar a tela Principal</a> 
 </body>
 </html>
