@@ -272,6 +272,7 @@ function atualizarNavbar() {
                     placeholder="Pesquise um animal..."
                     oninput="mostrarSugestoes()"
                     onblur="setTimeout(ocultarSugestoes, 200)"
+                    autocomplete="off"
                 />
                 <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
                 <div id="suggestions"></div>
