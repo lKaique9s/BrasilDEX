@@ -84,8 +84,29 @@ function removerAcentos(texto) {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
+function adicionarModal() {
+    const modalHTML = `
+        <div id="customAlert" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-button" onclick="fecharModal()">×</span>
+                <h2>Ops! Animal não encontrado</h2>
+                <p>Por favor, verifique a grafia ou tente outro animal da fauna brasileira!</p>
+                <button onclick="fecharModal()">Entendido</button>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+}
+
+
+function removerAcentos(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+
 function pesquisarAnimal() {
-    const input = removerAcentos(document.getElementById("searchInput").value.toLowerCase());
+    const inputElement = document.getElementById("searchInput");
+    const input = removerAcentos(inputElement.value.toLowerCase());
 
     const animalEncontrado = animais.find(animal => 
         removerAcentos(animal.nome.toLowerCase()) === input || 
@@ -93,11 +114,31 @@ function pesquisarAnimal() {
     );
 
     if (animalEncontrado) {
+        inputElement.value = "";
         window.location.href = animalEncontrado.link;
     } else {
-        alert("Animal não encontrado. Tente novamente.");
+        mostrarModal();
+        inputElement.value = "";
     }
 }
+
+function mostrarModal() {
+    const modal = document.getElementById("customAlert");
+    if (modal) {
+        modal.style.display = "flex";
+    } else {
+        console.error("O modal não foi encontrado no documento.");
+    }
+}
+
+function fecharModal() {
+    const modal = document.getElementById("customAlert");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", adicionarModal);
 
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("search-button");
@@ -125,7 +166,7 @@ const link = document.createElement("link");
 link.rel = "icon";
 link.href = "/imgs/logo/laranja-escrita.png";
 
-// Adiciona o elemento ao <head>
+
 document.head.appendChild(link);
 
 
