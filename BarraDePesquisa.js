@@ -301,68 +301,73 @@ window.onload = function () {
     const audioControl = document.createElement('div');
     audioControl.classList.add('audio-controls');
 
-    if (!!document.createElement('audio').canPlayType) {
-        const audio = document.createElement('audio');
-        audio.id = 'background-audio';
-        audio.src = '/imgs/EFEITOS SONOROS  NATUREZA_ PÁSSAROS (PARA EDIÇÃO DE VIDEOS ).mp3';
-        audio.autoplay = true;
-        audio.loop = true;
-        audio.style.display = 'none'; 
-        document.body.appendChild(audio);
+    const audio = document.createElement('audio');
+    audio.id = 'background-audio';
+    audio.src = '/imgs/EFEITOS SONOROS  NATUREZA_ PÁSSAROS (PARA EDIÇÃO DE VIDEOS ).mp3';
+    audio.autoplay = true;
+    audio.loop = true;
+    audio.style.display = 'none'; 
+    document.body.appendChild(audio);
 
-        const playPauseButton = document.createElement('button');
-        playPauseButton.setAttribute('aria-label', 'Reproduzir áudio');
-        playPauseButton.setAttribute('aria-pressed', 'false');
-        playPauseButton.innerHTML = '▶️';
-        playPauseButton.onclick = function () {
-            if (audio.paused) {
-                audio.play();
-                playPauseButton.innerHTML = '⏸️';
-                playPauseButton.setAttribute('aria-pressed', 'true');
-            } else {
-                audio.pause();
-                playPauseButton.innerHTML = '▶️';
-                playPauseButton.setAttribute('aria-pressed', 'false');
-            }
-        };
-        audioControl.appendChild(playPauseButton);
+    const loadAudioSettings = () => {
+        const savedVolume = localStorage.getItem('audioVolume');
+        const isMuted = localStorage.getItem('audioMuted') === 'true';
 
-        const muteButton = document.createElement('button');
-        muteButton.setAttribute('aria-label', 'Ativar/desativar som');
-        muteButton.innerHTML = '🔇';
-        muteButton.onclick = function () {
-            audio.muted = !audio.muted;
-            muteButton.innerHTML = audio.muted ? '🔊' : '🔇';
-        };
-        audioControl.appendChild(muteButton);
+        if (savedVolume !== null) {
+            audio.volume = parseFloat(savedVolume);
+            volumeSlider.value = savedVolume;
+        }
+        audio.muted = isMuted;
+        muteButton.innerHTML = isMuted ? '🔊' : '🔇';
+    };
 
-        const volumeSlider = document.createElement('input');
-        volumeSlider.type = 'range';
-        volumeSlider.min = '0';
-        volumeSlider.max = '1';
-        volumeSlider.step = '0.1';
-        volumeSlider.value = '1';
-        volumeSlider.setAttribute('aria-label', 'Controle de volume');
-        volumeSlider.oninput = function () {
-            audio.volume = volumeSlider.value;
-        };
-        audioControl.appendChild(volumeSlider);
-    } else {
-        const fallbackMessage = document.createElement('p');
-        fallbackMessage.innerText = 'Seu navegador não suporta áudio. Clique no botão abaixo para baixar o som.';
-        fallbackMessage.style.color = '#fff';
-        fallbackMessage.style.fontSize = '14px';
-        audioControl.appendChild(fallbackMessage);
+    const saveAudioSettings = () => {
+        localStorage.setItem('audioVolume', audio.volume);
+        localStorage.setItem('audioMuted', audio.muted);
+    };
 
-        const downloadLink = document.createElement('a');
-        downloadLink.href = '/imgs/EFEITOS SONOROS  NATUREZA_ PÁSSAROS (PARA EDIÇÃO DE VIDEOS ).mp3';
-        downloadLink.innerText = 'Baixar áudio';
-        downloadLink.style.color = '#fff';
-        downloadLink.style.textDecoration = 'underline';
-        audioControl.appendChild(downloadLink);
-    }
+    const playPauseButton = document.createElement('button');
+    playPauseButton.innerHTML = '▶️';
+    playPauseButton.onclick = function () {
+        if (audio.paused) {
+            audio.play();
+            playPauseButton.innerHTML = '⏸️';
+        } else {
+            audio.pause();
+            playPauseButton.innerHTML = '▶️';
+        }
+    };
+    audioControl.appendChild(playPauseButton);
+
+    const muteButton = document.createElement('button');
+    muteButton.innerHTML = '🔇';
+    muteButton.onclick = function () {
+        audio.muted = !audio.muted;
+        muteButton.innerHTML = audio.muted ? '🔊' : '🔇';
+        saveAudioSettings(); 
+    };
+    audioControl.appendChild(muteButton);
+
+    const volumeSlider = document.createElement('input');
+    volumeSlider.type = 'range';
+    volumeSlider.min = '0';
+    volumeSlider.max = '1';
+    volumeSlider.step = '0.1';
+    volumeSlider.value = '1';
+    volumeSlider.oninput = function () {
+        audio.volume = volumeSlider.value;
+        saveAudioSettings(); 
+    };
+    audioControl.appendChild(volumeSlider);
 
     const navbar = document.querySelector('.navbar .search-bar');
     navbar.parentElement.appendChild(audioControl);
-};
 
+    loadAudioSettings();
+
+    window.addEventListener('storage', function (event) {
+        if (event.key === 'audioVolume' || event.key === 'audioMuted') {
+            loadAudioSettings();
+        }
+    });
+};
