@@ -23,7 +23,11 @@ h1{
     letter-spacing: 5px;
 }
 
+<<<<<<< HEAD
 .aniContainer, #anfibiosID, #peixesID,#mamiferosID,#RepteisID,#avesID{
+=======
+.aniContainer, #anfibiosID, #peixesID,#mamiferosID,#RepteisID{
+>>>>>>> f21c8aa5e9191ecd018d0b7ba3020dccebcea972
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -32,7 +36,11 @@ h1{
     max-width: 1200px;
 }
 
+<<<<<<< HEAD
 .animal-peixe,.animal-anfibio,.animal-aves,.animal-reptil,.animal-mamifero{
+=======
+.animal-peixe,.animal-anfibio,.animal-ave,.animal-reptil,.animal-mamifero{
+>>>>>>> f21c8aa5e9191ecd018d0b7ba3020dccebcea972
     border-radius: 20px;
     box-shadow: 0 3px 15px rgba(100,100,100,0.5);
     margin: 10px;
@@ -64,11 +72,19 @@ h1{
     background-color: #81d181;
 }
 
+<<<<<<< HEAD
 .animal-aves{
     background-color: #bbd1d2;
 }
 
 .animal-aves:hover{
+=======
+.animal-ave{
+    background-color: #bbd1d2;
+}
+
+.animal-ave:hover{
+>>>>>>> f21c8aa5e9191ecd018d0b7ba3020dccebcea972
     background-color: #a6d1d3;
 }
 
@@ -116,7 +132,11 @@ h1{
     background: linear-gradient(to bottom, #2196F3  , #0D47A1);   
 }
 
+<<<<<<< HEAD
 .type-aves{
+=======
+.type-ave{
+>>>>>>> f21c8aa5e9191ecd018d0b7ba3020dccebcea972
     background: linear-gradient(to bottom, #87CEEB  , #B0BEC5);
 }
 
@@ -124,7 +144,11 @@ h1{
     background: linear-gradient(to bottom, #4CAF50  , #1B5E20);
 }
 
+<<<<<<< HEAD
 .type-anfibio,.type-aves,.type-mamifero,.type-peixe,.type-reptil{
+=======
+.type-anfibio,.type-ave,.type-mamifero,.type-peixe,.type-reptil{
+>>>>>>> f21c8aa5e9191ecd018d0b7ba3020dccebcea972
     color: #fff;
     padding: 2.5px 6px;
     border-radius: 3px;
@@ -262,7 +286,11 @@ h1{
 .animal-card img,
 .animal-peixe img,
 .animal-anfibio img,
+<<<<<<< HEAD
 .animal-aves img,
+=======
+.animal-ave img,
+>>>>>>> f21c8aa5e9191ecd018d0b7ba3020dccebcea972
 .animal-reptil img,
 .animal-mamifero img {
     max-width: 100%;
@@ -275,7 +303,11 @@ h1{
 .animal-mamifero:hover img,
 .animal-anfibio:hover img,
 .animal-reptil:hover img,
+<<<<<<< HEAD
 .animal-aves:hover img {
+=======
+.animal-ave:hover img {
+>>>>>>> f21c8aa5e9191ecd018d0b7ba3020dccebcea972
     transform: scale(1.2);
 }
 
@@ -284,7 +316,11 @@ h1{
 .animal-mamifero:hover,
 .animal-anfibio:hover,
 .animal-reptil:hover,
+<<<<<<< HEAD
 .animal-aves:hover{
+=======
+.animal-ave:hover{
+>>>>>>> f21c8aa5e9191ecd018d0b7ba3020dccebcea972
     transform: translateY(-10px), scale(1.2);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     width: 275px;
@@ -641,7 +677,11 @@ footer {
 .animal-mamifero:hover,
 .animal-anfibio:hover,
 .animal-reptil:hover,
+<<<<<<< HEAD
 .animal-aves:hover {
+=======
+.animal-ave:hover {
+>>>>>>> f21c8aa5e9191ecd018d0b7ba3020dccebcea972
     transform: translateY(-10px) scale(1); 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
