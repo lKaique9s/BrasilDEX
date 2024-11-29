@@ -297,3 +297,81 @@ document.addEventListener("DOMContentLoaded", function() {
         logoImg.setAttribute('style', 'height: 40px; position: relative; right: 180px;');
     }
 });
+window.onload = function() {
+    const audioControl = document.createElement('div');
+    audioControl.classList.add('audio-controls'); 
+
+    const audio = document.createElement('audio');
+    audio.id = 'background-audio';
+    audio.src = '/imgs/EFEITOS SONOROS  NATUREZA_ PÁSSAROS (PARA EDIÇÃO DE VIDEOS ).mp3'; 
+    audio.autoplay = true;
+    audio.loop = true;
+    audio.style.display = 'none';
+    document.body.appendChild(audio);
+
+    // Função para carregar configurações do localStorage
+    const loadAudioSettings = () => {
+        const savedVolume = localStorage.getItem('audioVolume');
+        const isMuted = localStorage.getItem('audioMuted') === 'true';
+
+        if (savedVolume !== null) {
+            audio.volume = parseFloat(savedVolume);
+            volumeSlider.value = savedVolume;
+        }
+        audio.muted = isMuted;
+        muteButton.innerHTML = isMuted ? '🔊' : '🔇';
+    };
+
+    // Função para salvar configurações no localStorage
+    const saveAudioSettings = () => {
+        localStorage.setItem('audioVolume', audio.volume);
+        localStorage.setItem('audioMuted', audio.muted);
+    };
+
+    const playPauseButton = document.createElement('button');
+    playPauseButton.innerHTML = '▶️';
+    playPauseButton.onclick = function() {
+        if (audio.paused) {
+            audio.play();
+            playPauseButton.innerHTML = '⏸️';
+        } else {
+            audio.pause();
+            playPauseButton.innerHTML = '▶️';
+        }
+    };
+    audioControl.appendChild(playPauseButton);
+
+    const muteButton = document.createElement('button');
+    muteButton.innerHTML = '🔇';
+    muteButton.onclick = function() {
+        audio.muted = !audio.muted;
+        muteButton.innerHTML = audio.muted ? '🔊' : '🔇';
+        saveAudioSettings(); // Salva o estado do mute
+    };
+    audioControl.appendChild(muteButton);
+
+    const volumeSlider = document.createElement('input');
+    volumeSlider.type = 'range';
+    volumeSlider.min = '0';
+    volumeSlider.max = '1';
+    volumeSlider.step = '0.1';
+    volumeSlider.value = '1';
+    volumeSlider.oninput = function() {
+        audio.volume = volumeSlider.value;
+        saveAudioSettings(); // Salva o volume
+    };
+    audioControl.appendChild(volumeSlider);
+
+    const navbar = document.querySelector('.navbar .search-bar');
+    navbar.parentElement.appendChild(audioControl);
+
+    // Carregar configurações ao inicializar
+    loadAudioSettings();
+
+    // Sincronizar entre abas usando storage event
+    window.addEventListener('storage', function(event) {
+        if (event.key === 'audioVolume' || event.key === 'audioMuted') {
+            loadAudioSettings();
+        }
+    });
+};
