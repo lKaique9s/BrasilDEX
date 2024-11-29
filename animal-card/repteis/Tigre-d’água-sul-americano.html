@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrasilDex - Tigre-d’água-sul-americano</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, rgb(153, 202, 243), #B2E8B0, #5cb65f);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/index.html">BrasilDex</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/home.html">Home</a></li>
+                    <li><a href="/index.html">Coleção</a></li>
+                    <li><a href="/saibamais.html">Saiba Mais!</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Pesquise um animal...">
+                    <button id="search-button" onclick="pesquisarAnimal()">Pesquisar</button>
+                </div>
+            </nav>
+    <a href="#" class="back-button" onclick="window.history.back();">Voltar</a>
+    <div class="card-container-expand">
+        <div class="animal-card-expand">
+            <div class="animal-image">
+                <img src="/imgs/repteisimg/Tigre-dgua.jpg" alt="Cotiarinha">
+            </div>
+            <div class="animal-info">
+                <h1>Tigre-d’água-sul-americano </h1>
+                <p><strong>Nome Científico:</strong> Trachemys dorbigni</p>
+                <p><strong>Classe:</strong> Reptilia</p>
+                <p><strong>Características:</strong> Tartaruga comum em nossos rios, banhados e lagoas. Possui linhas amareladas por todo o corpo, por isso seu nome. Seu ventre é quase que totalmente manchado.</p>
+                <p><strong>Alimentação:</strong> Peixes, crustáceos, vermes e vegetais.</p>
+                <p><strong>Altura Média:</strong> 30 cm.</p>
+                <p><strong>Peso Médio:</strong> 3 kg </p>
+                <div class="fun-facts">
+                    <h2>Curiosidades</h2>
+                    <ul>
+                        <br>
+                        <li>  São diversas vezes ilegalmente comercializados como animal de estimação e com isso começou a surgir em lugares fora do seu habitat natural, possivelmente oriundo de abandonos dos donos.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/BarraDePesquisa.js" ></script>
+</body>
+</html>
